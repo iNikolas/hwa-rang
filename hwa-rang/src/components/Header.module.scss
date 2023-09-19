@@ -1,0 +1,117 @@
+@import "../App.module.scss";
+
+$title-color: linear-gradient(
+    90deg,
+    #09142e 2.82%,
+    #58275f 52%,
+    #f85253 104.36%
+);
+
+.header {
+    display: flex;
+
+    .leftSection {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 35px;
+        background-image: url("../assets/banner.png");
+        background-size: cover;
+        width: 60%;
+        height: 100vh;
+        .logoName {
+            padding-left: 85px;
+            @extend .sectionTitle;
+        }
+        .mainTitle {
+            position: absolute;
+            right: 0;
+            top: 200px;
+            color: #fff;
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 80px;
+            letter-spacing: 0em;
+            text-align: left;
+            span {
+                &:last-child {
+                    padding-left: 35px;
+                }
+            }
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-around;
+            padding-right: 15px;
+            margin-top: 5px;
+            li {
+                padding-left: 35px;
+                color: #fff;
+                font-weight: 500;
+                font-size: 14px;
+            }
+        }
+    }
+    .rightSection {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-top: 35px;
+        width: 40%;
+        .mainTitle {
+            position: absolute;
+            left: 15px;
+            top: 200px;
+            background: $title-color;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 80px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        .navigation {
+            display: flex;
+            padding-left: 15px;
+            margin-top: 5px;
+            li {
+                padding-left: 35px;
+                font-weight: 500;
+                font-size: 14px;
+                &:first-child {
+                    padding-left: 0;
+                }
+                &:last-child {
+                    color: #ba2e30;
+                    font-weight: 700;
+                    padding-left: 100px;
+                }
+            }
+        }
+        h1 {
+            color: #0c0b0b;
+            font-size: 58px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%; /* 69.6px */
+            letter-spacing: 2.32px;
+            text-transform: uppercase;
+        }
+        h3 {
+            color: #0c0b0b;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%; /* 31.2px */
+            letter-spacing: 0.96px;
+        }
+
+        .titles {
+            padding-left: 30px;
+            padding-top: 260px;
+        }
+    }
+}

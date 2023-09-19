@@ -1,0 +1,47 @@
+$btn-color: linear-gradient(90deg, #09142e 2.82%, #58275f 52%, #f85253 104.36%);
+
+.button {
+    height: 48px;
+    padding: 16px 22px;
+    gap: 8px;
+    border: 1px solid #0e0d0d;
+    background-color: #fff;
+    color: black;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    &::before {
+        content: "/ ";
+    }
+    &:hover {
+        background: linear-gradient(
+            45deg,
+            rgba(6, 19, 44, 1),
+            rgba(107, 44, 104, 1),
+            rgba(222, 75, 87, 1)
+        );
+        background-size: 200% 200%;
+        animation: gradientShift 2s infinite;
+        color: white;
+        border-color: rgba(6, 19, 44, 1);
+        &::before {
+            content: "\\ ";
+        }
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
