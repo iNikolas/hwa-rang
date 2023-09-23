@@ -17,16 +17,16 @@ export const AdvantageSection: React.FC = () => {
             і визнання.`,
         },
         {
-            title: "Щорічні  збори в карпатах",
+            title: "Щорічні  збори спортсменів в Карпатах",
             img: "../images/advantage/advantage3.jpg",
             desc: `Спортсмени розвивають свої фізичні здібності, навчаються спортивній дисципліні та будують дружні стосунки в прекрасному гірському середовищі.`,
         },
     ];
 
     return (
-        <section className="px-[85px] py-[170px] pb-[15px]">
+        <section className="px-[85px] py-[170px]">
             <Title title={"НАШІ ПЕРЕВАГИ"} />
-            <div className="flex justify-between">
+            <div className="flex justify-between pt-7">
                 {advantage.map(({ title, img, desc }, index) => (
                     <Card
                         key={index}
