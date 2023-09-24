@@ -38,6 +38,26 @@ export const Footer: React.FC = () => {
                         </span>
                         hwa-rang@ukr.net
                     </a>
+                    <div className="flex w-[150px] mt-10 justify-between">
+                        <a href="https://www.facebook.com/hwarang.kiev">
+                            <img
+                                src="../public/icons/facebook.svg"
+                                alt="www.facebook.com/hwarang.kiev"
+                            />
+                        </a>
+                        <a href="https://www.instagram.com/HWA_RANG.TKD/">
+                            <img
+                                src="../public/icons/instagram.svg"
+                                alt="www.instagram.com/HWA_RANG.TKD"
+                            />
+                        </a>
+                        <a href="https://www.youtube.com/@hwa-rangtkdkyiv3970">
+                            <img
+                                src="../public/icons/youtube.svg"
+                                alt="www.youtube.com/@hwa-rangtkdkyiv3970"
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
             <p className="text-[20px] font-normal">
