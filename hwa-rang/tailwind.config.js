@@ -5,6 +5,7 @@ export default {
         extend: {
             fontSize: {
                 24: "24px",
+                32: "32px",
             },
         },
     },
