@@ -1,0 +1,14 @@
+{
+    "name": "hwa-rang-app",
+    "version": "1.0.0",
+    "description": "HWA-RANG app",
+    "scripts": {
+        "start:frontend": "cd hwa-rang && yarn && yarn run dev",
+        "start:tailwind": "cd hwa-rang && npx tailwindcss -i ./src/index.css -o ./dist/index.css --watch",
+        "start:both": "concurrently \"npm run start:frontend\" \"npm run start:tailwind\"",
+        "start": "yarn && yarn run start:both"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.1"
+    }
+}

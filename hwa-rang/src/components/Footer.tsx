@@ -3,7 +3,7 @@ export const Footer: React.FC = () => {
         <footer className="px-[85px] pt-[50px] pb-4">
             <div className="flex flex-wrap items-baseline justify-between">
                 <div className="flex items-end text-2xl font-semibold leading-8 tracking-tight">
-                    <span className="block bg-gradient-to-r text-transparent bg-clip-text from-[#09142e] via-[#58275f] to-[#f85253]">
+                    <span className="font-fontMonument block bg-gradient-to-r text-transparent bg-clip-text from-[#09142e] via-[#58275f] to-[#f85253]">
                         HWA-RANG
                     </span>
                 </div>

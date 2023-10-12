@@ -5,6 +5,7 @@ import { AdvantageSection } from "./components/AdvantageSection";
 import { AthletesGallery } from "./components/AthletesGallery";
 import { CoachesSection } from "./components/CoachesSection";
 import { Footer } from "./components/Footer";
+import { HallsSection } from "./components/HallsSection";
 import { Header } from "./components/Header";
 import { ServicesSection } from "./components/ServicesSection";
 
@@ -17,6 +18,7 @@ function App() {
             <AboutTKDSection />
             <AdvantageSection />
             <CoachesSection />
+            <HallsSection />
             <ServicesSection />
             <Footer />
         </>

@@ -1,6 +1,6 @@
 import { Card } from "../shared/components/Card";
 import { Title } from "../shared/components/Title";
-import { SignUpButton } from "../shared/components/btns/SignUpButton";
+import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
 
 export const ServicesSection: React.FC = () => {
     const advantage = [
@@ -34,7 +34,7 @@ export const ServicesSection: React.FC = () => {
                         title={title}
                         description={desc}
                     >
-                        <SignUpButton />
+                        <SignUpButtonOutline />
                     </Card>
                 ))}
             </div>

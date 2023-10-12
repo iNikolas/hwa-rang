@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation, FreeMode } from "swiper/modules";
-import { SignUpButton } from "../shared/components/btns/SignUpButton";
+import { Navigation, FreeMode, Autoplay } from "swiper/modules";
+import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
 import { FilterButton } from "../shared/components/btns/FilterButton";
 
 type Image = {
@@ -67,10 +67,10 @@ export const AthletesGallery: React.FC = () => {
     }, [galleryKey]);
 
     return (
-        <section className=" py-[150px]">
+        <section className="py-[150px]">
             <div className="flex justify-between pb-[76px] pr-16">
                 <div className="pl-[85px] w-[597px] text-3xl font-semibold">
-                    СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!?
+                    СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
                 </div>
                 <div>
                     <div className="flex">
@@ -159,9 +159,13 @@ export const AthletesGallery: React.FC = () => {
                     nextEl: ".custom-swiper-button-next",
                     prevEl: ".custom-swiper-button-prev",
                 }}
-                modules={[Navigation, FreeMode]}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                modules={[Navigation, FreeMode, Autoplay]}
                 slidesPerView={3}
-                spaceBetween={30}
+                spaceBetween={10}
                 freeMode={true}
                 className="mySwiper"
             >
@@ -175,7 +179,7 @@ export const AthletesGallery: React.FC = () => {
                 ))}
             </Swiper>
             <div className="flex justify-center pt-10">
-                <SignUpButton />
+                <SignUpButtonOutline />
             </div>
         </section>
     );
