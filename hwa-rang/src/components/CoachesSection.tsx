@@ -2,7 +2,7 @@ import { Title } from "../shared/components/Title";
 
 export const CoachesSection: React.FC = () => {
     return (
-        <section className="py-[50px]">
+        <section id="trainers" className="py-[50px]">
             <div className="px-[85px] pb-7">
                 <Title title={"НАШІ ТРЕНЕРИ"} />
             </div>

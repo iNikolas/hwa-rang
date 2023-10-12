@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
                 <nav className="lg:hidden">
                     <ul className="flex pl-[15px] xl:pl-[10px] mt-[5px] text-14 xl:text-12 font-medium">
                         <li className="font-medium">
-                            <a href="#gyms">/ ЗАЛИ</a>
+                            <a href="#halls">/ ЗАЛИ</a>
                         </li>
                         <li className="pl-[35px] xl:pl-[15px] font-medium ">
                             <a href="#services">/ ПОСЛУГИ</a>

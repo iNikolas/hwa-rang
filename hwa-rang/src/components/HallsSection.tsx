@@ -62,7 +62,7 @@ export const HallsSection: React.FC = () => {
     ];
 
     return (
-        <section className=" my-[170px] bg-[#DCE7E9] ">
+        <section id="halls" className=" my-[170px] bg-[#DCE7E9] ">
             <div className="bg-[url('../../public/kyiv-bg.svg')] bg-no-repeat bg-cover h-full bg-top">
                 <div className="px-[20px] pl-[65px] pt-[75px] ">
                     <Title title={"НАШІ ЗАЛИ"} />

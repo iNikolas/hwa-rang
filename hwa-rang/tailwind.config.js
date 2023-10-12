@@ -16,6 +16,7 @@ export default {
             },
             fontFamily: {
                 fontMonument: ['"PP Monument Extended"'],
+                Satoshi: ['"Satoshi"'],
             },
             screens: {
                 "2xl": { max: "1535px" },

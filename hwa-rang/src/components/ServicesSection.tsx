@@ -24,7 +24,7 @@ export const ServicesSection: React.FC = () => {
     ];
 
     return (
-        <section className="px-[85px] py-[170px]">
+        <section id="services" className="px-[85px] py-[170px]">
             <Title title={"НАШІ ПЕРЕВАГИ"} />
             <div className="flex justify-between pt-7 ">
                 {advantage.map(({ title, img, desc }, index) => (
