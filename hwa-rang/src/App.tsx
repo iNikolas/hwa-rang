@@ -12,15 +12,15 @@ import { ServicesSection } from "./components/ServicesSection";
 function App() {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <AboutSection />
-            <AthletesGallery />
-            <AboutTKDSection />
+            {/* <AthletesGallery /> */}
+            {/*<AboutTKDSection />
             <AdvantageSection />
             <CoachesSection />
             <HallsSection />
             <ServicesSection />
-            <Footer />
+            <Footer /> */}
         </>
     );
 }

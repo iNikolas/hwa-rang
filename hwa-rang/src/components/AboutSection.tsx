@@ -4,16 +4,19 @@ export const AboutSection: React.FC = () => {
     return (
         <section
             id="about"
-            className="relative pt-[170px] pl-[85px] pr-[67px] pb-[15px]"
+            className="relative pt-[170px] lg:pt-[70px] pl-[85px] pr-[67px] lg:px-[30px] pb-[15px]"
         >
             <div className="flex justify-between">
                 <h2
-                    className="font-Satoshi text-36 text-[230px] font-extrabold tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
-                    style={{ WebkitTextStroke: "1px #b3adad" }}
+                    className="text-[230px] xl:text-[180px] lg:hidden tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
+                    style={{
+                        WebkitTextStroke: "1px #b3adad",
+                        fontFamily: "MontserratBlack",
+                    }}
                 >
                     TAE
                 </h2>
-                <div className="mt-[60px] 1xl:absolute top-0 left-[85px]">
+                <div className="mt-[60px] 1xl:absolute top-0 left-[85px] lg:left-[30px]">
                     <Title title={"ПРО КЛУБ"} />
                 </div>
 
@@ -23,52 +26,61 @@ export const AboutSection: React.FC = () => {
                         орієнтовані на спортивні досягнення <br /> наших учнів
                         та розвиток олімпійського <br /> тхеквондо в Україні.
                     </p>
-                    <span className="border-b border-[#f16669] w-1/2 mt-7"></span>
+                    <span className="lg:hidden  border-b border-[#f16669] w-1/2 mt-7"></span>
                 </div>
             </div>
             <h2
-                style={{ WebkitTextStroke: "1px #b3adad" }}
-                className="font-Satoshi mx-3 text-36 text-[230px] font-extrabold tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
+                style={{
+                    WebkitTextStroke: "1px #b3adad",
+                    fontFamily: "MontserratBlack",
+                }}
+                className="lg:hidden  mx-3 xl:text-[180px] text-[230px] font-extrabold tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
             >
                 KWON
             </h2>
             <div className="flex">
                 <h2
-                    style={{ WebkitTextStroke: "1px #b3adad" }}
-                    className="font-Satoshi mx-3 text-36 text-[230px] font-extrabold tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
+                    style={{
+                        WebkitTextStroke: "1px #b3adad",
+                        fontFamily: "MontserratBlack",
+                    }}
+                    className="lg:hidden  mx-3 xl:text-[180px] text-[230px] font-extrabold tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
                 >
                     DO
                 </h2>
-                <div className="flex flex-col items-start pl-[50px]">
-                    <p className="ml-90px mt-[70px]">
+                <div className="flex flex-col items-start pl-[50px] lg:p-0">
+                    <p className="ml-90px mt-[70px] lg:mt-4">
                         Ми працюємо з дітьми та дорослими будь-
                         <br />
                         якого рівня підготовки. В нас тренуються як
                         <br /> досвідченні спортсмени так і початківці.
                     </p>
-                    <span className="border-b border-[#f16669] w-1/2  mt-7"></span>
+                    <span className="lg:hidden  border-b border-[#f16669] w-1/2  mt-7"></span>
                 </div>
             </div>
             <h2
-                style={{ WebkitTextStroke: "1px #b3adad" }}
-                className="font-Satoshi mx-3 text-36 text-[230px] font-extrabold tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
+                style={{
+                    WebkitTextStroke: "1px #b3adad",
+                    fontFamily: "MontserratBlack",
+                }}
+                className="lg:hidden  mx-3 xl:text-[180px] text-[230px] font-extrabold tracking-[34.5px] leading-[207px]  transition duration-500 hover:bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent bg-[2px] hover:bg-clip-text"
             >
                 KYIV
             </h2>
-            <div className="flex flex-col items-start mt-[41px] ml-[30px]">
+            <div className="flex flex-col items-start mt-[41px] ml-[30px] lg:ml-0 lg:mt-4">
                 <p>
                     Індивідуальний підхід, ефективні персональні <br />
                     програми та збалансовані фізичні навантаження <br />
                     гарантовані!
                 </p>
-                <span className="border-b border-[#f16669] w-[12%] mt-7 "></span>
+                <span className="lg:hidden  border-b border-[#f16669] w-[12%] mt-7 "></span>
             </div>
-            <div className="absolute right-[50px] bottom-[50px] font-Montserrat text-20 font-normal leading-24 tracking-[0.12em] ml-[50px] bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent uppercase">
-                <p>/ тренування для:</p>
-                <p className="text-center">дітей</p>
-                <p className="mr-[40px]">дорослих</p>
-                <p className="ml-[50px]">початківців</p>
-                <p className="ml-[20px]">профі /</p>
+            <div className="absolute md:hidden right-[50px] bottom-[50px] lg:bottom-[125px] font-Montserrat font-normal leading-24 tracking-[0.12em] ml-[50px] bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent uppercase">
+                <p className="lg:text-16">/ тренування для:</p>
+                <p className="text-center lg:text-16">дітей</p>
+                <p className="mr-[40px] lg:text-16">дорослих</p>
+                <p className="ml-[50px] lg:text-16">початківців</p>
+                <p className="ml-[20px] lg:text-16">профі /</p>
             </div>
         </section>
     );

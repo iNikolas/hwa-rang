@@ -7,16 +7,19 @@ export default {
             fontSize: {
                 12: "12px",
                 14: "14px",
+                16: "16px",
                 18: "18px",
                 24: "24px",
                 32: "32px",
                 42: "42px",
+                48: "48px",
                 58: "58px",
                 80: "80px",
             },
             fontFamily: {
                 fontMonument: ['"PP Monument Extended"'],
-                Satoshi: ['"Satoshi"'],
+                Satoshi: ["Satoshi"],
+                MontserratBlack: ['"MontserratBlack"'],
             },
             screens: {
                 "2xl": { max: "1535px" },
