@@ -1,6 +1,11 @@
-import { Card } from "../shared/components/Card";
 import { Title } from "../shared/components/Title";
 import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    CardFooter,
+} from "@material-tailwind/react";
 
 export const ServicesSection: React.FC = () => {
     const advantage = [
@@ -24,17 +29,36 @@ export const ServicesSection: React.FC = () => {
     ];
 
     return (
-        <section id="services" className="px-[85px] py-[170px]">
-            <Title title={"НАШІ ПЕРЕВАГИ"} />
-            <div className="flex justify-between pt-7 ">
+        <section
+            id="services"
+            className="flex flex-col pl-[85px] pr-[18px] md:px-[30px] xs:px-[20px]"
+        >
+            <Title title={"НАШІ ПОСЛУГИ"} />
+            <div className="flex md:flex-col pt-7 xs:pt-0 justify-between">
                 {advantage.map(({ title, img, desc }, index) => (
-                    <Card
-                        key={index}
-                        image={img}
-                        title={title}
-                        description={desc}
-                    >
-                        <SignUpButtonOutline />
+                    <Card className="mt-6 w-[430px] md:w-full" key={index}>
+                        <CardHeader color="blue-gray" className="relative h-65">
+                            <img
+                                src={img}
+                                alt="card-image"
+                                className="h-full w-full"
+                            />
+                        </CardHeader>
+                        <CardBody className="px-[15px]">
+                            <p
+                                color="blue-gray"
+                                className="pt-3 pb-4 text-24 xs:text-20 font-bold xs:font-semibold align-top"
+                            >
+                                {title}
+                            </p>
+                            <p className="py-5 relative ">
+                                {desc}
+                                <span className="absolute w-1/2 h-1 text-20 xs:text-18 border-t border-red-500 left-0 top-0"></span>
+                            </p>
+                        </CardBody>
+                        <CardFooter className="pt-0 pl-4">
+                            <SignUpButtonOutline />
+                        </CardFooter>
                     </Card>
                 ))}
             </div>
