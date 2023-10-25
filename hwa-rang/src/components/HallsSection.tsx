@@ -1,3 +1,4 @@
+import Marquee from "react-fast-marquee";
 import { AccordionCardHall } from "../shared/components/AccordionCard";
 import { ContactCard } from "../shared/components/ContactCard";
 import { Title } from "../shared/components/Title";
@@ -99,6 +100,23 @@ export const HallsSection: React.FC = () => {
                         </AccordionCardHall>
                     ))}
                 </div>
+            </div>
+            <div className="hidden lg:block">
+                <Marquee>
+                    <span
+                        style={{
+                            // WebkitTextStroke: "1px #b3adad",
+                            color: "transparent",
+                            background:
+                                "linear-gradient(90deg, rgba(186, 46, 48, 0.9) 2.82%, rgba(88, 29, 96, 0.9) 52%, rgba(248, 82, 83, 0.9) 104.36%)",
+                            WebkitBackgroundClip: "text",
+                            fontFamily: "MontserratBlack",
+                        }}
+                        className="text-[96px] font-extrabold  text-transparent"
+                    >
+                        TAEKWONDO - KYIV &nbsp;
+                    </span>
+                </Marquee>
             </div>
         </section>
     );

@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
             <div className="absolute z-30 left-[15px] top-[30px] font-fontMonument bg-gradient-to-r from-[#BA2E30] via-[#A277A9] to-[#F85253] text-transparent bg-clip-text font-semibold text-[20px] text-center">
                 HWA-RANG
             </div>
-            <div className="absolute lg:flex hidden flex-row-reverse top-[32px] right-0 z-10">
+            <div className="absolute lg:flex hidden flex-row-reverse  top-[32px] right-0 z-10">
                 <MenuMobile />
             </div>
             <div className="relative flex justify-end  md:h-full pt-[36px] bg-[url('/src/assets/banner.png')] xs:bg-[url('/src/assets/banner-mobile.png')] bg-cover  w-3/5  md:w-full lg:bg-center">

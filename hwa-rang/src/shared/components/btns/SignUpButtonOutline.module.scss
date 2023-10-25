@@ -46,3 +46,9 @@ $btn-color: linear-gradient(90deg, #09142e 2.82%, #58275f 52%, #f85253 104.36%);
         background-position: 0% 50%;
     }
 }
+
+@media (max-width: 822px) {
+    .button {
+        padding: 16px 15px;
+    }
+}

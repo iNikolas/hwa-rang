@@ -11,8 +11,8 @@ export const MenuMobile = () => {
     return (
         <Menu
             animate={{
-                mount: { x: 25 },
-                unmount: { x: -250 },
+                mount: { transform: "translateX(0)", left: "0" },
+                unmount: { transform: "translateX(-55px)", left: "-55px" },
             }}
             placement="left"
             lockScroll={true}
