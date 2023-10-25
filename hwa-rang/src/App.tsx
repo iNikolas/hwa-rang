@@ -16,9 +16,9 @@ function App() {
             <AboutSection />
             <AthletesGallery />
             <AboutTKDSection />
-            {/* <AdvantageSection /> */}
+            <AdvantageSection />
             <CoachesSection />
-            {/* <ServicesSection /> */}
+            <ServicesSection />
             <HallsSection />
             <Footer />
         </>

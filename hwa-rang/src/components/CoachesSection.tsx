@@ -49,8 +49,8 @@ export const CoachesSection: React.FC = () => {
                     <a href="tel:0975135810">097 513 58 10</a>
                 </CardBody>
             </Card>
-            <Card className="w-full flex-row lg:flex-col-reverse lg:items-center justify-between pr-[20px] lg:px-[30px] pt-5">
-                <CardBody className="w-full pl-[5%] xs:pl-0 pt-[6%]">
+            <Card className="w-full flex-row lg:flex-col-reverse lg:items-center justify-between lg:px-[30px] pt-5">
+                <CardBody className="w-full pl-[85px] xs:pl-0 pt-[6%]">
                     <p className="mb-4 uppercase text-32 md:text-24 font-bold pb-[40px] lg:pt-6 xs:pb-0">
                         ФІЛАТОВ ІГОР ВАСИЛЬОВИЧ
                     </p>
