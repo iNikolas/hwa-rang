@@ -1,7 +1,7 @@
 $btn-color: linear-gradient(90deg, #09142e 2.82%, #58275f 52%, #f85253 104.36%);
 
 .button {
-    width: 296px;
+    max-width: 296px;
     height: 48px;
     padding: 16px 22px;
     gap: 8px;
@@ -44,5 +44,11 @@ $btn-color: linear-gradient(90deg, #09142e 2.82%, #58275f 52%, #f85253 104.36%);
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 822px) {
+    .button {
+        padding: 16px 15px;
     }
 }

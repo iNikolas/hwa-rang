@@ -6,24 +6,15 @@ export const Header: React.FC = () => {
     const title2 = " TAE";
 
     return (
-        <header className="relative flex sm:flex-col h-[750px]">
-            {/* TODO: знайти рішення, як уникнути дублювання */}
-            <div className="relative xs:flex items-center justify-between hidden bg-white px-[20px] h-[86px] z-21">
-                <div className="font-fontMonument bg-gradient-to-r from-[#BA2E30] via-[#A277A9] to-[#F85253] text-transparent bg-clip-text font-semibold text-[20px] text-center">
-                    HWA-RANG
-                </div>
-                <div className="flex-row-reverse z-10">
-                    <MenuMobile />
-                </div>
+        <header className="relative flex md:flex-col h-[750px]">
+            <div className="relative md:flex items-center justify-between hidden bg-white px-[20px] h-[86px]"></div>
+            <div className="absolute z-30 left-[15px] top-[30px] font-fontMonument bg-gradient-to-r from-[#BA2E30] via-[#A277A9] to-[#F85253] text-transparent bg-clip-text font-semibold text-[20px] text-center">
+                HWA-RANG
             </div>
-            <div className="absolute lg:flex hidden xs:hidden flex-row-reverse top-[38px] right-0 z-10">
+            <div className="absolute lg:flex hidden flex-row-reverse  top-[32px] right-0 z-10">
                 <MenuMobile />
             </div>
-            <div className="relative flex justify-between sm:h-full pt-[36px] bg-[url('/src/assets/banner.png')] xs:bg-[url('/src/assets/banner-mobile.png')] bg-cover  w-3/5  md:w-full lg:bg-center">
-                <div className="font-fontMonument xs:hidden bg-gradient-to-r from-[#BA2E30] via-[#A277A9] to-[#F85253] text-transparent bg-clip-text font-semibold text-2xl leading-8 text-center xs:pl-[15px] pl-[85px] xl:pl-[30px]">
-                    HWA-RANG
-                </div>
-
+            <div className="relative flex justify-end  md:h-full pt-[36px] bg-[url('/src/assets/banner.png')] xs:bg-[url('/src/assets/banner-mobile.png')] bg-cover  w-3/5  md:w-full lg:bg-center">
                 <nav className="lg:hidden">
                     <ul className="flex justify-between pr-2 mt-[5px] text-14 xl:text-12">
                         <li className="pl-[35px] xl:pl-[15px] text-white font-medium">
@@ -42,13 +33,15 @@ export const Header: React.FC = () => {
                     <span className="pl-9">{title2}</span>
                 </div>
             </div>
-            <div className="absolute md:block hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 xs:mt-[50px] ">
-                <h1 className="mb-3 text-white text-58 1xl:text-42 font-extrabold uppercase md:normal-case leading-[69px] md:leading-[48px] xs:mb-[24px]">
+            <div className="absolute md:block hidden top-1/2 left-[30px] -translate-y-1/2 xs:mt-[50px] ">
+                <h1 className="mb-3 text-white text-58 sm:text-48 font-extrabold uppercase md:normal-case  xs:mb-[24px]">
                     Тхеквандо <br /> для дітей <br />
                     та дорослих
                 </h1>
-                <h3 className="pb-[25px] text-white text-24 font-bold tracking-normal">
-                    Тренування для всіх, незалежно <br /> від рівня підготовки
+                <h3 className="pb-[25px] text-white text-24 font-semibold tracking-normal">
+                    Тренування для всіх,
+                    <br /> незалежно від рівня <br />
+                    підготовки
                 </h3>
                 <SignUpButtonOutline />
             </div>
@@ -56,7 +49,7 @@ export const Header: React.FC = () => {
                 <nav className="lg:hidden">
                     <ul className="flex pl-[15px] xl:pl-[10px] mt-[5px] text-14 xl:text-12 font-medium">
                         <li className="font-medium">
-                            <a href="#gyms">/ ЗАЛИ</a>
+                            <a href="#halls">/ ЗАЛИ</a>
                         </li>
                         <li className="pl-[35px] xl:pl-[15px] font-medium ">
                             <a href="#services">/ ПОСЛУГИ</a>

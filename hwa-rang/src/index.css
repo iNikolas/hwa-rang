@@ -13,6 +13,16 @@
     src: url("../public/fonts/MonumentExtended-Black.ttf");
 }
 
+@font-face {
+    font-family: "MontserratBlack";
+    src: url("../public/fonts/Montserrat-Black.ttf");
+}
+
+@font-face {
+    font-family: "MontserratBold";
+    src: url("../public/fonts/Montserrat-ExtraBold.ttf");
+}
+
 :root {
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
@@ -22,6 +32,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 li {
@@ -37,4 +51,8 @@ a {
 
 p {
     font-size: 20px;
+}
+
+.ReactCollapse--collapse {
+    transition: height 500ms;
 }

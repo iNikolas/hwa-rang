@@ -20,7 +20,7 @@ export const ContactCard: React.FC<{
     desc,
 }) => {
     return (
-        <div className="flex flex-col justify-center  my-5 p-[3%] mx-4 w-[691px] bg-white">
+        <div className="flex flex-col justify-center  my-5 p-[3%] mx-4 max-w-[691px] bg-white">
             <div className="border-b border-solid border-[#DCE7E9] mb-6">
                 <p className="text-24 font-semibold pb-7">{place}</p>
                 <p className="text-18 font-normal pb-7">{address}</p>

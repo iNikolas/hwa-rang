@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { HallsSection } from "./components/HallsSection";
 import { Header } from "./components/Header";
 import { ServicesSection } from "./components/ServicesSection";
+import { Form } from "./shared/components/Form";
 
 function App() {
     return (
@@ -18,8 +19,9 @@ function App() {
             <AboutTKDSection />
             <AdvantageSection />
             <CoachesSection />
-            <HallsSection />
             <ServicesSection />
+            <HallsSection />
+            <Form />
             <Footer />
         </>
     );

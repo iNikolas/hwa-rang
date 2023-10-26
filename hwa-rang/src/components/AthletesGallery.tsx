@@ -29,6 +29,7 @@ export const AthletesGallery: React.FC = () => {
     const [images, setImages] = useState<GalleryData | null>(null);
     const [galleryData, setGalleryData] = useState<Image[]>([]);
     const [galleryKey, setGalleryKey] = useState("exam");
+    console.log(galleryData);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -50,7 +51,7 @@ export const AthletesGallery: React.FC = () => {
 
     useEffect(() => {
         if (images) {
-            setGalleryData(images.carpathianImages || []);
+            setGalleryData(images.examImages || []);
         }
     }, [images]);
 
@@ -68,11 +69,11 @@ export const AthletesGallery: React.FC = () => {
 
     return (
         <section className="py-[150px]">
-            <div className="flex justify-between pb-[76px] pr-16">
-                <div className="pl-[85px] w-[597px] text-3xl font-semibold">
+            <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
+                <div className="pl-[85px] xl:pl-[30px] max-w-[597px] text-3xl font-semibold">
                     СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
                 </div>
-                <div>
+                <div className=" xl:pl-[30px]  xl:pt-[36px]">
                     <div className="flex">
                         <FilterButton
                             name={"Екзамен на пояс"}
@@ -102,7 +103,7 @@ export const AthletesGallery: React.FC = () => {
                         />
                     </div>
                 </div>
-                <div className="flex items-end pb-3">
+                <div className="flex items-end pb-3 xl:pl-[30px] xl:pt-9">
                     <button
                         className="custom-swiper-button-prev"
                         style={{
