@@ -5,7 +5,7 @@ export const AboutSection: React.FC = () => {
     return (
         <section
             id="about"
-            className="relative pt-[170px] lg:pt-[70px] pl-[85px] pr-[67px] lg:px-[30px] pb-[15px]"
+            className="relative pt-[170px] lg:pt-[70px] pl-[85px] pr-[20px] lg:px-[30px] pb-[15px]"
         >
             <div className="flex justify-between">
                 <h2
