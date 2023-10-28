@@ -11,7 +11,7 @@ export function GradientText({
     <span
       {...props}
       className={cn(
-        "bg-gradient-to-r text-transparent bg-clip-text font-[700] text-2xl leading-[28.8px]",
+        "bg-gradient-to-r text-transparent bg-clip-text font-[700] text-2xl leading-[28.8px] uppercase tracking-widest",
         basicGradient.join(" "),
         className
       )}

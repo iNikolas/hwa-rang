@@ -1,25 +1,74 @@
 import {
-  Card,
-  Typography,
   TextField,
-  FormControl,
-  FormControlLabel,
+  FormControl as MuiFormControl,
+  FormControlLabel as MuiFormControlLabel,
   Radio,
   RadioGroup,
-  FormLabel,
-  InputLabel,
-  MenuItem,
+  MenuItem as MuiMenuItem,
   Select,
   SelectChangeEvent,
   FormGroup,
   Checkbox,
+  FormControlProps,
+  FormControlLabelProps,
+  MenuItemProps,
 } from "@mui/material";
 import React from "react";
-import { GradientText } from ".";
+
+import { GradientText } from "./GradientText";
+import { cn } from "../utils";
+
+import { theme } from "theme";
+console.log(theme);
+
+const Label = ({ className, ...props }: React.HTMLProps<HTMLLabelElement>) => {
+  return (
+    <label
+      {...props}
+      className={cn("text-xl leading-none font-medium mb-[9px]", className)}
+    />
+  );
+};
+
+const MenuItem = (props: MenuItemProps) => {
+  return <MuiMenuItem sx={{ color: theme.colors.gray[400] }} {...props} />;
+};
+
+const FormControlLabel = ({
+  checkbox = false,
+  ...props
+}: { checkbox?: boolean } & FormControlLabelProps) => {
+  console.log(theme.colors["dark-blue"], theme.colors.purple);
+  return (
+    <MuiFormControlLabel
+      className="[&_.MuiTypography-root]:text-secondary [&_.MuiTypography-root]:font-montserrat"
+      sx={{
+        height: 48,
+        "& .Mui-checked": {
+          color: checkbox ? theme.colors["dark-blue"] : theme.colors.purple,
+        },
+      }}
+      {...props}
+    />
+  );
+};
+
+const FormControl = (props: FormControlProps) => {
+  return (
+    <MuiFormControl
+      className="[&_.MuiSelect-select]:text-gray-400"
+      variant="standard"
+      size="small"
+      fullWidth
+      sx={{ mb: 4.5 }}
+      {...props}
+    />
+  );
+};
 
 export const Form: React.FC = () => {
-  const [services, setServices] = React.useState("");
-  const [halls, setHalls] = React.useState("");
+  const [services, setServices] = React.useState("none");
+  const [halls, setHalls] = React.useState("none");
 
   const servicesSelect = (event: SelectChangeEvent) => {
     setServices(event.target.value);
@@ -29,47 +78,38 @@ export const Form: React.FC = () => {
   };
 
   return (
-    <Card
-      sx={{
-        maxWidth: 600,
-        padding: 2,
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <GradientText>Запишись на тренування</GradientText>
+    <form className="[&_input]:placeholder:text-gray-400 [&_input]:placeholder:opacity-100 max-w-[600px] p-4 flex flex-col [&_.MuiInputLabel-shrink]:opacity-0 [&_.MuiInput-root]:h-[29px] [&_.MuiInputBase-root]:mt-0 [&_input]:text-gray-400">
+      <GradientText className="ml-1 mb-[42px]">
+        Запишись <span className="whitespace-nowrap">на тренування</span>
+      </GradientText>
+      <Label htmlFor="name">Ім’я</Label>
+      <TextField
+        id="name"
+        placeholder="Введіть ваше ім’я"
+        variant="standard"
+        size="small"
+        sx={{
+          marginBottom: 4.5,
+        }}
+      />
       <FormControl>
-        <TextField
-          id="name"
-          label="Введіть ваше ім’я"
-          variant="standard"
-          sx={{ marginBottom: 5 }}
-        />
-      </FormControl>
-      <FormControl variant="standard" sx={{ marginBottom: 5 }}>
-        <InputLabel id="services-select">Послуги</InputLabel>
-        <Select
-          labelId="services-select"
-          id="services-select"
-          value={services}
-          onChange={servicesSelect}
-          label="Послуги"
-        >
+        <Label htmlFor="services-select">Послуги</Label>
+        <Select id="services-select" value={services} onChange={servicesSelect}>
+          <MenuItem sx={{ display: "none" }} value="none">
+            Оберіть послугу
+          </MenuItem>
           <MenuItem value={"Групові тренування"}>Групові тренування</MenuItem>
           <MenuItem value={"Персональні тренування"}>
             Персональні тренування
           </MenuItem>
         </Select>
       </FormControl>
-      <FormControl variant="standard" sx={{ marginBottom: 5 }}>
-        <InputLabel id="halls-select">Зал</InputLabel>
-        <Select
-          labelId="halls-select"
-          id="halls-select"
-          value={halls}
-          onChange={hallsSelect}
-          label="Зал"
-        >
+      <FormControl>
+        <Label htmlFor="halls-select">Зал</Label>
+        <Select id="halls-select" value={halls} onChange={hallsSelect}>
+          <MenuItem sx={{ display: "none" }} value="none">
+            Оберіть зал
+          </MenuItem>
           <MenuItem value={"Метро Диміївська/Голосіївська"}>
             Метро Диміївська/Голосіївська
           </MenuItem>
@@ -81,14 +121,14 @@ export const Form: React.FC = () => {
         </Select>
       </FormControl>
 
-      <FormLabel id="row-radio-buttons-group-label">
+      <Label htmlFor="row-radio-buttons-group-label">
         Оберіть хто буде тренуватись
-      </FormLabel>
+      </Label>
       <RadioGroup
         row
-        aria-labelledby="row-radio-buttons-group-label"
+        id="row-radio-buttons-group-label"
         name="row-radio-buttons-group"
-        sx={{ marginBottom: 5 }}
+        sx={{ marginBottom: 2 }}
       >
         <FormControlLabel
           value="Дорослий"
@@ -97,22 +137,24 @@ export const Form: React.FC = () => {
         />
         <FormControlLabel value="Дитина" control={<Radio />} label="Дитина" />
       </RadioGroup>
-      <FormControl>
-        <TextField
-          id="age"
-          label="Вкажіть ваш вік"
-          variant="standard"
-          sx={{ marginBottom: 5 }}
-        />
-      </FormControl>
+      <Label htmlFor="age">Вік</Label>
+      <TextField
+        id="age"
+        size="small"
+        placeholder="Вкажіть ваш вік"
+        variant="standard"
+        sx={{ marginBottom: 5.25 }}
+      />
       <FormGroup>
-        <Typography variant="h6" color="blue-gray">
-          Оберіть спосіб зв’язку
-        </Typography>
-        <FormControlLabel control={<Checkbox />} label="Мобільний телефон" />
-        <FormControlLabel control={<Checkbox />} label="Viber" />
-        <FormControlLabel control={<Checkbox />} label="Telegram" />
+        <Label>Оберіть спосіб зв’язку</Label>
+        <FormControlLabel
+          checkbox
+          control={<Checkbox />}
+          label="Мобільний телефон"
+        />
+        <FormControlLabel checkbox control={<Checkbox />} label="Viber" />
+        <FormControlLabel checkbox control={<Checkbox />} label="Telegram" />
       </FormGroup>
-    </Card>
+    </form>
   );
 };
