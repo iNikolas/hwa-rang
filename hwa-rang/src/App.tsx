@@ -1,3 +1,4 @@
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import "./App.module.scss";
 import { AboutSection } from "./components/AboutSection";
 import { AboutTKDSection } from "./components/AboutTKDSection";
@@ -9,22 +10,24 @@ import { HallsSection } from "./components/HallsSection";
 import { Header } from "./components/Header";
 import { ServicesSection } from "./components/ServicesSection";
 import { Form } from "./shared/components/Form";
+import { muiTheme } from "./theme";
 
 function App() {
-    return (
-        <>
-            <Header />
-            <AboutSection />
-            <AthletesGallery />
-            <AboutTKDSection />
-            <AdvantageSection />
-            <CoachesSection />
-            <ServicesSection />
-            <HallsSection />
-            <Form />
-            <Footer />
-        </>
-    );
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <CssBaseline />
+      <Header />
+      <AboutSection />
+      <AthletesGallery />
+      <AboutTKDSection />
+      <AdvantageSection />
+      <CoachesSection />
+      <ServicesSection />
+      <HallsSection />
+      <Form />
+      <Footer />
+    </ThemeProvider>
+  );
 }
 
 export default App;

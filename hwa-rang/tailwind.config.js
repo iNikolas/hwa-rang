@@ -8,6 +8,7 @@ export default {
         secondary: "#0D0D0D99",
         purple: "#6750A4",
         "dark-blue": "#29507F",
+        "custom-black": "#0D0D0D",
       },
       fontSize: {
         12: "12px",
