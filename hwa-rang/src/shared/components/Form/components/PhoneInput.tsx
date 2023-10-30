@@ -5,7 +5,7 @@ import ReactPhoneInput, {
 import { Controller, useFormContext } from "react-hook-form";
 
 import { cn } from "../../../utils";
-import { CustomPhoneInput } from "./CustomPhoneNumber.tsx";
+import { CustomPhoneInput } from "./CustomPhoneNumber";
 
 export const PhoneInput: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,

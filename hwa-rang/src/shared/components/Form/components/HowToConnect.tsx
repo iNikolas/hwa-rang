@@ -26,7 +26,7 @@ export function HowToConnect() {
         const viber = howToConnect.includes(connections.viber);
         const telegram = howToConnect.includes(connections.telegram);
         return (
-          <FormGroup onChange={onBlur}>
+          <FormGroup className="mb-[26px]" onChange={onBlur}>
             <Label>Оберіть спосіб зв’язку</Label>
             <FormControlLabel
               error={!!error}
