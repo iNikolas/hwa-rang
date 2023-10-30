@@ -1,5 +1,8 @@
-import { TextField } from "@mui/material";
+import { TextField, useMediaQuery } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
+
+import { theme } from "theme";
+
 import { Label } from "./Label";
 
 export function AgeInput() {
@@ -7,6 +10,10 @@ export function AgeInput() {
     formState: { errors },
     control,
   } = useFormContext();
+
+  const gtSmLtLg = useMediaQuery(
+    `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`
+  );
 
   const error = errors.age;
 
@@ -21,6 +28,7 @@ export function AgeInput() {
         <>
           <Label htmlFor="age">Вік</Label>
           <TextField
+            fullWidth
             error={!!error}
             value={value}
             onChange={(event) =>
@@ -31,7 +39,7 @@ export function AgeInput() {
             size="small"
             placeholder="Вкажіть ваш вік"
             variant="standard"
-            sx={{ marginBottom: 5.25 }}
+            sx={{ marginBottom: gtSmLtLg ? 7.5 : 5.25 }}
           />
         </>
       )}

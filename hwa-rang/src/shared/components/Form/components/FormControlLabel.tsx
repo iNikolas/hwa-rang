@@ -5,10 +5,9 @@ import {
 
 import { theme } from "theme";
 
-console.log(theme.colors);
-
 export const FormControlLabel = ({
   error = false,
+  sx,
   ...props
 }: { error?: boolean } & FormControlLabelProps) => {
   return (
@@ -28,6 +27,7 @@ export const FormControlLabel = ({
         "& .Mui-checked.MuiCheckbox-colorPrimary": {
           color: theme.colors["dark-blue"],
         },
+        ...sx,
       }}
       {...props}
     />

@@ -31,6 +31,7 @@ export default {
       backgroundImage: {
         gradient:
           "linear-gradient(45deg,rgba(6, 19, 44, 1),rgba(107, 44, 104, 1),rgba(222, 75, 87, 1))",
+        taekwondo: "url(/images/taekwondo.png)",
       },
       colors: {
         secondary: "#0D0D0D99",
@@ -40,6 +41,8 @@ export default {
         "custom-black": "#0D0D0D",
         "active-border": "rgba(6,19,44,1)",
         disabled: "#ADADAD",
+        "tint-white": "#F7F1F1",
+        background: "#F9FBFC",
       },
       fontSize: {
         12: "12px",
@@ -62,6 +65,8 @@ export default {
         montserrat: ["Montserrat, sans-serif"],
       },
       screens: {
+        tablet: { min: "639px", max: "1023px" },
+
         "2xl": { max: "1535px" },
 
         "1xl": { max: "1371px" },
