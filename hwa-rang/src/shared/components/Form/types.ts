@@ -7,3 +7,8 @@ export type FormSchema = {
   howToConnect: string[];
   phone: string;
 };
+
+export type Choice = {
+  trainer: string;
+  selectedHall: string;
+};

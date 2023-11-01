@@ -3,8 +3,8 @@ import { useFormContext } from "react-hook-form";
 
 import hallsData from "data/halls.json";
 
-import { NoTrainerStub } from "./NotrainerStub";
 import { TrainerProfile } from "./TrainerProfile";
+import { NoTrainerStub } from "./NoTrainerStub";
 
 export function LocationInfo() {
   const { watch } = useFormContext();

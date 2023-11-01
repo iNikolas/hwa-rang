@@ -1,21 +1,12 @@
-import hallsData from "data/halls.json";
 import trainersData from "data/trainers.json";
-import { NoTrainerStub } from "./NotrainerStub";
 
-export function TrainerProfile({
-  trainer,
-  selectedHall,
-}: {
-  trainer: string;
-  selectedHall: string;
-}) {
+import { Choice } from "../types";
+import { RelatedHalls } from "./RelatedHalls";
+
+export function TrainerProfile({ trainer, selectedHall }: Choice) {
   const trainerData = trainersData.find((t) => t.name === trainer);
 
-  const relatedHalls = hallsData.filter((h) => h.trainer === trainer);
-
   const hallName = selectedHall.split("/").map((h) => h.trim());
-
-  console.log(selectedHall, hallName);
 
   return (
     <div className="p-[55px] text-white">
@@ -48,6 +39,7 @@ export function TrainerProfile({
           </div>
         </div>
       </div>
+      <RelatedHalls trainer={trainer} selectedHall={selectedHall} />
     </div>
   );
 }

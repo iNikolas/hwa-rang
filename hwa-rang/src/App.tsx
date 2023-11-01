@@ -1,4 +1,6 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import { domAnimation, LazyMotion, domMax } from "framer-motion";
+
 import "./App.module.scss";
 import { AboutSection } from "./components/AboutSection";
 import { AboutTKDSection } from "./components/AboutTKDSection";
@@ -14,19 +16,23 @@ import { muiTheme } from "./theme";
 
 function App() {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <CssBaseline />
-      <Header />
-      <AboutSection />
-      <AthletesGallery />
-      <AboutTKDSection />
-      <AdvantageSection />
-      <CoachesSection />
-      <ServicesSection />
-      <HallsSection />
-      <Form />
-      <Footer />
-    </ThemeProvider>
+    <LazyMotion features={domAnimation}>
+      <LazyMotion features={domMax}>
+        <ThemeProvider theme={muiTheme}>
+          <CssBaseline />
+          <Header />
+          <AboutSection />
+          <AthletesGallery />
+          <AboutTKDSection />
+          <AdvantageSection />
+          <CoachesSection />
+          <ServicesSection />
+          <HallsSection />
+          <Form />
+          <Footer />
+        </ThemeProvider>
+      </LazyMotion>
+    </LazyMotion>
   );
 }
 

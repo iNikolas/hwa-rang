@@ -9,6 +9,8 @@ export default defineConfig({
     alias: {
       theme: path.resolve(__dirname, "./src/theme"),
       data: path.resolve(__dirname, "./src/data"),
+      shared: path.resolve(__dirname, "./src/shared"),
+      utils: path.resolve(__dirname, "./src/shared/utils"),
     },
   },
 });

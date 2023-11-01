@@ -22,7 +22,9 @@
     "baseUrl": "./src/",
     "paths": {
       "theme/*": ["./theme/*"],
-      "data/*": ["./data/*"]
+      "data/*": ["./data/*"],
+      "shared/*": ["./shared/*"],
+      "utils/*": ["shared/utils/*"]
     }
   },
   "include": ["src"],
