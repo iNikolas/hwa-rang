@@ -21,7 +21,8 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src/",
     "paths": {
-      "theme/*": ["./theme/*"]
+      "theme/*": ["./theme/*"],
+      "data/*": ["./data/*"]
     }
   },
   "include": ["src"],

@@ -33,10 +33,10 @@ export function HallInput() {
             <MenuItem sx={{ display: "none" }} value="none">
               Оберіть зал
             </MenuItem>
-            <MenuItem value={"Метро Диміївська/Голосіївська"}>
+            <MenuItem value={"Метро диміївська / Метро Голосіївська"}>
               Метро Диміївська/Голосіївська
             </MenuItem>
-            <MenuItem value={"Метро Іподром/Теремки"}>
+            <MenuItem value={"Метро Іподором / Метро теремки"}>
               Метро Іподром/Теремки
             </MenuItem>
             <MenuItem value={"Метро Героїв Дніпра"}>

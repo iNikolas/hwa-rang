@@ -7,3 +7,4 @@ export * from "./HallInput";
 export * from "./ForInput";
 export * from "./AgeInput";
 export * from "./HowToConnect";
+export * from "./LocationInfo";

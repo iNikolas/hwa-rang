@@ -6,6 +6,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: { theme: path.resolve(__dirname, "./src/theme") },
+    alias: {
+      theme: path.resolve(__dirname, "./src/theme"),
+      data: path.resolve(__dirname, "./src/data"),
+    },
   },
 });

@@ -11,6 +11,7 @@ import {
   ForInput,
   AgeInput,
   HowToConnect,
+  LocationInfo,
 } from "./components";
 
 export const Form: React.FC = () => {
@@ -48,14 +49,8 @@ export const Form: React.FC = () => {
               <SubmitButton />
             </div>
           </form>
+          <LocationInfo />
         </FormProvider>
-        <div className="bg-dark-blue w-full lg:hidden">
-          <div className="bg-cover bg-center bg-taekwondo w-full h-full flex justify-center items-center">
-            <span className="text-center uppercase font-bold text-24 leading-[28.8px] tracking-[.48rem] text-tint-white">
-              Обирай тхеквондо!
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   );
