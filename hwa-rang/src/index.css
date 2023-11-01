@@ -4,55 +4,82 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Satoshi";
-    src: url("../public/fonts/Satoshi-Black.woff2") format("woff2");
+  font-family: PP Neue Montreal;
+  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-book.otf")
+    format("opentype");
 }
 
 @font-face {
-    font-family: "PP Monument Extended";
-    src: url("../public/fonts/MonumentExtended-Black.ttf");
+  font-family: PP Neue Montreal;
+  font-weight: 200;
+  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-thin.otf")
+    format("opentype");
 }
 
 @font-face {
-    font-family: "MontserratBlack";
-    src: url("../public/fonts/Montserrat-Black.ttf");
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-medium.otf")
+    format("opentype");
 }
 
 @font-face {
-    font-family: "MontserratBold";
-    src: url("../public/fonts/Montserrat-ExtraBold.ttf");
+  font-family: PP Neue Montreal;
+  font-weight: 700;
+  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-bold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../public/fonts/Satoshi-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PP Monument Extended";
+  src: url("../public/fonts/MonumentExtended-Black.ttf");
+}
+
+@font-face {
+  font-family: "MontserratBlack";
+  src: url("../public/fonts/Montserrat-Black.ttf");
+}
+
+@font-face {
+  font-family: "MontserratBold";
+  src: url("../public/fonts/Montserrat-ExtraBold.ttf");
 }
 
 :root {
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .ReactCollapse--collapse {
-    transition: height 500ms;
+  transition: height 500ms;
 }

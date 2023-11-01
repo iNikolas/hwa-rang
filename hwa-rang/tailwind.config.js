@@ -63,6 +63,7 @@ export default {
         Satoshi: ["Satoshi"],
         MontserratBlack: ['"MontserratBlack"'],
         montserrat: ["Montserrat, sans-serif"],
+        "pp-neue-montreal": ['"PP Neue Montreal", sans-serif'],
       },
       screens: {
         tablet: { min: "639px", max: "1023px" },
