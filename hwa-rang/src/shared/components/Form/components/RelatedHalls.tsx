@@ -5,6 +5,7 @@ import hallsData from "data/halls.json";
 import { cn } from "utils/index";
 
 import { Choice } from "../types";
+import { useFormContext } from "react-hook-form";
 
 const Caption = ({
   className,
@@ -37,11 +38,11 @@ export function RelatedHalls({ trainer, selectedHall }: Choice) {
   const [selected, setSelected] = React.useState(selectedHall);
   const relatedHalls = hallsData.filter((h) => h.trainer === trainer);
 
+  const { setValue } = useFormContext();
+
   const hall = relatedHalls.find(
     (h) => h.name.toLowerCase() === selected.toLowerCase()
   );
-
-  console.log(hall);
 
   React.useEffect(() => {
     setSelected(selectedHall);
@@ -56,7 +57,7 @@ export function RelatedHalls({ trainer, selectedHall }: Choice) {
             <div
               key={hall.name}
               className="relative cursor-pointer"
-              onClick={() => setSelected(hall.name)}
+              onClick={() => setValue("hall", hall.name)}
             >
               <span
                 className={cn(
