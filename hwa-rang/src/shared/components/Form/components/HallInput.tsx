@@ -39,7 +39,7 @@ export function HallInput() {
             <MenuItem value={"Метро Іподором / Метро теремки"}>
               Метро Іподром/Теремки
             </MenuItem>
-            <MenuItem value={"Метро позняки"}>Метро позняки</MenuItem>
+            <MenuItem value={"Метро Позняки"}>Метро Позняки</MenuItem>
             <MenuItem value={"Метро Героїв Дніпра"}>
               Метро Героїв Дніпра
             </MenuItem>

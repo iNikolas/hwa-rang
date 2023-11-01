@@ -10,6 +10,7 @@ export const MenuItem = (props: MenuItemProps) => {
         "&.Mui-selected": {
           backgroundColor: theme.colors["dark-blue"],
           color: theme.colors.white,
+          "&:hover": { backgroundColor: theme.colors["dark-blue"] },
         },
       }}
       {...props}
