@@ -6,12 +6,7 @@ import { theme } from "theme";
 import { Label } from "./Label";
 
 export function NameInput() {
-  const {
-    formState: { errors },
-    control,
-  } = useFormContext();
-
-  const error = errors.name;
+  const { control } = useFormContext();
 
   const gtSmLtLg = useMediaQuery(
     `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`
@@ -21,19 +16,14 @@ export function NameInput() {
     <Controller
       name="name"
       control={control}
-      rules={{
-        required: true,
-      }}
-      render={({ field: { onChange, onBlur, value } }) => (
+      render={({ field: { onChange, value } }) => (
         <>
           <Label htmlFor="name">Ім’я</Label>
           <TextField
             fullWidth
-            error={!!error}
             id="name"
             onChange={onChange}
             value={value}
-            onBlur={onBlur}
             placeholder="Введіть ваше ім’я"
             variant="standard"
             size="small"

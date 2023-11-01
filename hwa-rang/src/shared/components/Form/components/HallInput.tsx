@@ -5,26 +5,16 @@ import { MenuItem } from "./MenuItem";
 import { FormControl } from "./FormControl";
 
 export function HallInput() {
-  const {
-    formState: { errors },
-    control,
-  } = useFormContext();
-
-  const error = errors.hall;
+  const { control } = useFormContext();
 
   return (
     <Controller
       name="hall"
       control={control}
-      rules={{
-        required: true,
-        validate: (value) => value !== "none",
-      }}
       render={({ field: { onChange, onBlur, value } }) => (
         <FormControl>
           <Label htmlFor="halls-select">Зал</Label>
           <Select
-            error={!!error}
             id="halls-select"
             value={value}
             onChange={onChange}

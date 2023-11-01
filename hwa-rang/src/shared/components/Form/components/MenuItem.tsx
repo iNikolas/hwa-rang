@@ -2,7 +2,7 @@ import { MenuItemProps, MenuItem as MuiMenuItem } from "@mui/material";
 
 import { theme } from "theme";
 
-export const MenuItem = (props: MenuItemProps) => {
+export const MenuItem = ({ sx, ...props }: MenuItemProps) => {
   return (
     <MuiMenuItem
       sx={{
@@ -12,6 +12,7 @@ export const MenuItem = (props: MenuItemProps) => {
           color: theme.colors.white,
           "&:hover": { backgroundColor: theme.colors["dark-blue"] },
         },
+        ...sx,
       }}
       {...props}
     />

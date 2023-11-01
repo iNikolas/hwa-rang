@@ -6,24 +6,16 @@ import { FormControlLabel } from "./FormControlLabel";
 import { theme } from "theme";
 
 export function ForInput() {
-  const {
-    formState: { errors },
-    control,
-  } = useFormContext();
+  const { control } = useFormContext();
 
   const gtSmLtLg = useMediaQuery(
     `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`
   );
 
-  const error = errors.for;
-
   return (
     <Controller
       name="for"
       control={control}
-      rules={{
-        required: true,
-      }}
       render={({ field: { onChange, onBlur, value } }) => (
         <>
           <Label htmlFor="row-radio-buttons-group-label">
@@ -38,13 +30,11 @@ export function ForInput() {
             sx={{ marginBottom: gtSmLtLg ? "58px" : 2 }}
           >
             <FormControlLabel
-              error={!!error}
               value="Дорослий"
               control={<Radio />}
               label="Дорослий"
             />
             <FormControlLabel
-              error={!!error}
               value="Дитина"
               control={<Radio />}
               label="Дитина"

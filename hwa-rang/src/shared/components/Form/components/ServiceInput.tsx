@@ -5,31 +5,16 @@ import { MenuItem } from "./MenuItem";
 import { FormControl } from "./FormControl";
 
 export function ServiceInput() {
-  const {
-    formState: { errors },
-    control,
-  } = useFormContext();
-
-  const error = errors.service;
+  const { control } = useFormContext();
 
   return (
     <Controller
       name="service"
       control={control}
-      rules={{
-        required: true,
-        validate: (value) => value !== "none",
-      }}
-      render={({ field: { onChange, onBlur, value } }) => (
+      render={({ field: { onChange, value } }) => (
         <FormControl>
           <Label htmlFor="services-select">Послуги</Label>
-          <Select
-            error={!!error}
-            id="services-select"
-            value={value}
-            onChange={onChange}
-            onBlur={onBlur}
-          >
+          <Select id="services-select" value={value} onChange={onChange}>
             <MenuItem sx={{ display: "none" }} value="none">
               Оберіть послугу
             </MenuItem>
@@ -37,6 +22,7 @@ export function ServiceInput() {
             <MenuItem value={"Персональні тренування"}>
               Персональні тренування
             </MenuItem>
+            <MenuItem value="Он-лайн тренування">Он-лайн тренування</MenuItem>
           </Select>
         </FormControl>
       )}
