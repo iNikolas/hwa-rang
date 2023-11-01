@@ -26,7 +26,7 @@ const Description = ({
   return (
     <span
       className={cn(
-        "text-white text-18 leading-[27px] mb-5 font-normal",
+        "text-white text-18 leading-[27px] mb-5 font-normal font-pp-neue-montreal",
         className
       )}
       {...props}
@@ -61,7 +61,7 @@ export function RelatedHalls({ trainer, selectedHall }: Choice) {
             >
               <span
                 className={cn(
-                  "relative z-10 uppercase font-bold px-[21px] py-1.5",
+                  "text-[24px] relative z-10 uppercase font-bold px-[21px] py-1.5",
                   activeTab && "text-dark-blue"
                 )}
               >

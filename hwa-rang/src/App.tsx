@@ -1,4 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import { FormProvider, useForm } from "react-hook-form";
 import { domAnimation, LazyMotion, domMax } from "framer-motion";
 
 import "./App.module.scss";
@@ -13,23 +14,39 @@ import { Header } from "./components/Header";
 import { ServicesSection } from "./components/ServicesSection";
 import { Form } from "./shared/components/Form";
 import { muiTheme } from "./theme";
+import { FormSchema } from "shared/components/Form/types";
 
 function App() {
+  const methods = useForm<FormSchema>({
+    mode: "onBlur",
+    defaultValues: {
+      name: "",
+      phone: "",
+      service: "none",
+      hall: "none",
+      for: "",
+      age: "",
+      howToConnect: [],
+    },
+  });
+
   return (
     <LazyMotion features={domAnimation}>
       <LazyMotion features={domMax}>
         <ThemeProvider theme={muiTheme}>
-          <CssBaseline />
-          <Header />
-          <AboutSection />
-          <AthletesGallery />
-          <AboutTKDSection />
-          <AdvantageSection />
-          <CoachesSection />
-          <ServicesSection />
-          <HallsSection />
-          <Form />
-          <Footer />
+          <FormProvider {...methods}>
+            <CssBaseline />
+            <Header />
+            <AboutSection />
+            <AthletesGallery />
+            <AboutTKDSection />
+            <AdvantageSection />
+            <CoachesSection />
+            <ServicesSection />
+            <HallsSection />
+            <Form methods={methods} />
+            <Footer />
+          </FormProvider>
         </ThemeProvider>
       </LazyMotion>
     </LazyMotion>

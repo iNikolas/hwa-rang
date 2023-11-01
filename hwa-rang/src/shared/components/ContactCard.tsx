@@ -10,7 +10,7 @@ const Description: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
     <p
       {...props}
       className={cn(
-        "text-18 font-normal leading-[27px] font-pp-neue-montreal",
+        "text-18 leading-[27px] font-pp-neue-montreal tracking-wide",
         className
       )}
     />
@@ -43,7 +43,7 @@ export const ContactCard: React.FC<{
         <Description className="pb-7">{address}</Description>
       </div>
       <div className="flex justify-between">
-        <div className="pb-5 px-5">
+        <div className="pb-5 pr-5">
           <p className="text-24 font-semibold pb-5">РОЗКЛАД</p>
           <Description>{group}</Description>
           <Description className="pb-5">{schedule}</Description>

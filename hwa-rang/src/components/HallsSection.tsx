@@ -1,3 +1,5 @@
+import React from "react";
+import { useFormContext } from "react-hook-form";
 import Marquee from "react-fast-marquee";
 
 import hallsData from "data/halls.json";
@@ -7,7 +9,6 @@ import { AccordionCardHall } from "../shared/components/AccordionCard";
 import { ContactCard } from "../shared/components/ContactCard";
 import { Title } from "../shared/components/Title";
 import { SignUpButton } from "../shared/components/btns/SignUpButton";
-import React from "react";
 
 type Contact = {
   place: string;
@@ -36,6 +37,15 @@ export const HallsSection: React.FC = () => {
     });
   }, []);
 
+  const { setValue } = useFormContext();
+
+  const signUphandler = (value: string) => () => {
+    setValue("hall", value);
+    const link = document.createElement("a");
+    link.href = "#form";
+    link.click();
+  };
+
   return (
     <section id="halls" className=" mt-[170px] bg-[#DCE7E9] ">
       <div className="bg-[url('../../public/kyiv-bg.svg')] bg-no-repeat bg-cover h-full bg-top">
@@ -45,31 +55,15 @@ export const HallsSection: React.FC = () => {
 
         <div className="flex flex-wrap justify-center items-center pb-[70px] xs:hidden">
           {contacts.map((c) => (
-            <ContactCard
-              place={c.place}
-              address={c.address}
-              coach={c.coach}
-              telephone={c.telephone}
-              group={c.group}
-              schedule={c.schedule}
-              desc={c.desc}
-            >
-              <SignUpButton />
+            <ContactCard {...c}>
+              <SignUpButton onClick={signUphandler(c.place)} />
             </ContactCard>
           ))}
         </div>
         <div className="hidden xs:flex flex-col">
           {contacts.map((c) => (
-            <AccordionCardHall
-              place={c.place}
-              address={c.address}
-              coach={c.coach}
-              telephone={c.telephone}
-              group={c.group}
-              schedule={c.schedule}
-              desc={c.desc}
-            >
-              <SignUpButton />
+            <AccordionCardHall {...c}>
+              <SignUpButton onClick={signUphandler(c.place)} />
             </AccordionCardHall>
           ))}
         </div>
