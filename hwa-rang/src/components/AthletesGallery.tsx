@@ -7,181 +7,176 @@ import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutli
 import { FilterButton } from "../shared/components/btns/FilterButton";
 
 type Image = {
-    folder: string;
-    photo: string;
+  folder: string;
+  photo: string;
 };
 
 type GalleryData = {
-    carpathianImages: Image[];
-    examImages: Image[];
-    competitionImages: Image[];
-    trainingImages: Image[];
+  carpathianImages: Image[];
+  examImages: Image[];
+  competitionImages: Image[];
+  trainingImages: Image[];
 };
 
 enum GalleryFilterCategory {
-    Exam = "exam",
-    Competition = "competition",
-    Carpathian = "carpathian",
-    Training = "training",
+  Exam = "exam",
+  Competition = "competition",
+  Carpathian = "carpathian",
+  Training = "training",
 }
 
 export const AthletesGallery: React.FC = () => {
-    const [images, setImages] = useState<GalleryData | null>(null);
-    const [galleryData, setGalleryData] = useState<Image[]>([]);
-    const [galleryKey, setGalleryKey] = useState("exam");
-    console.log(galleryData);
+  const [images, setImages] = useState<GalleryData | null>(null);
+  const [galleryData, setGalleryData] = useState<Image[]>([]);
+  const [galleryKey, setGalleryKey] = useState("exam");
+  console.log(galleryData);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("src/shared/galleryImages.json");
-                if (!response.ok) {
-                    throw new Error("Помилка запиту до сервера");
-                }
-                const jsonData = await response.json();
-
-                setImages(jsonData);
-            } catch (error) {
-                console.error("Помилка отримання даних:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    useEffect(() => {
-        if (images) {
-            setGalleryData(images.examImages || []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("src/shared/galleryImages.json");
+        if (!response.ok) {
+          throw new Error("Помилка запиту до сервера");
         }
-    }, [images]);
+        const jsonData = await response.json();
 
-    useEffect(() => {
-        if (galleryKey === GalleryFilterCategory.Carpathian) {
-            setGalleryData(images?.carpathianImages || []);
-        } else if (galleryKey === GalleryFilterCategory.Competition) {
-            setGalleryData(images?.competitionImages || []);
-        } else if (galleryKey === GalleryFilterCategory.Exam) {
-            setGalleryData(images?.examImages || []);
-        } else if (galleryKey === GalleryFilterCategory.Training) {
-            setGalleryData(images?.trainingImages || []);
-        }
-    }, [galleryKey]);
+        setImages(jsonData);
+      } catch (error) {
+        console.error("Помилка отримання даних:", error);
+      }
+    };
 
-    return (
-        <section className="py-[150px]">
-            <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
-                <div className="pl-[85px] xl:pl-[30px] max-w-[597px] text-3xl font-semibold">
-                    СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
-                </div>
-                <div className=" xl:pl-[30px]  xl:pt-[36px]">
-                    <div className="flex">
-                        <FilterButton
-                            name={"Екзамен на пояс"}
-                            onClick={() => setGalleryKey("exam")}
-                            styleProp={"mb-3 mr-3"}
-                            activeButton={galleryKey === "exam"}
-                        />
-                        <FilterButton
-                            name={" Змагання"}
-                            onClick={() => setGalleryKey("competition")}
-                            styleProp={"mb-3 mr-3"}
-                            activeButton={galleryKey === "competition"}
-                        />
-                    </div>
-                    <div className="flex">
-                        <FilterButton
-                            name={"Літній табір"}
-                            onClick={() => setGalleryKey("carpathian")}
-                            styleProp={"mb-3 mr-3"}
-                            activeButton={galleryKey === "carpathian"}
-                        />
-                        <FilterButton
-                            name={"Тренування"}
-                            onClick={() => setGalleryKey("training")}
-                            styleProp={"mb-3 mr-3"}
-                            activeButton={galleryKey === "training"}
-                        />
-                    </div>
-                </div>
-                <div className="flex items-end pb-3 xl:pl-[30px] xl:pt-9">
-                    <button
-                        className="custom-swiper-button-prev"
-                        style={{
-                            height: "14px",
-                            background: "inherit",
-                            borderRight: "2px solid #DE4B55B2",
-                            paddingRight: "3px",
-                            color: "#ababab",
-                            transition: "color 0.3s ease-in-out",
-                            cursor: "pointer",
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.color = "black";
-                            e.currentTarget.style.borderRight =
-                                "2px solid #E61717";
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.color = "#ababab";
-                            e.currentTarget.style.borderRight =
-                                "2px solid #DE4B55B2";
-                        }}
-                    >
-                        Назад
-                    </button>
-                    <button
-                        className="custom-swiper-button-next"
-                        style={{
-                            height: "14px",
-                            background: "inherit",
-                            borderLeft: "2px solid #DE4B55B2",
-                            marginLeft: "14px",
-                            paddingLeft: "3px",
-                            color: "#ababab",
-                            transition: "color 0.3s ease-in-out",
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.color = "black";
-                            e.currentTarget.style.borderLeft =
-                                "2px solid #E61717";
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.color = "#ababab";
-                            e.currentTarget.style.borderLeft =
-                                "2px solid #DE4B55B2";
-                        }}
-                    >
-                        Вперед
-                    </button>
-                </div>
-            </div>
+    fetchData();
+  }, []);
 
-            <Swiper
-                navigation={{
-                    nextEl: ".custom-swiper-button-next",
-                    prevEl: ".custom-swiper-button-prev",
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                modules={[Navigation, FreeMode, Autoplay]}
-                slidesPerView={3}
-                spaceBetween={10}
-                freeMode={true}
-                className="mySwiper"
-            >
-                {galleryData.map(({ folder, photo }) => (
-                    <SwiperSlide key={photo}>
-                        <img
-                            src={`../public/images/${folder}/${photo}.jpg`}
-                            alt={photo}
-                        />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-            <div className="flex justify-center pt-10">
-                <SignUpButtonOutline />
-            </div>
-        </section>
-    );
+  useEffect(() => {
+    if (images) {
+      setGalleryData(images.examImages || []);
+    }
+  }, [images]);
+
+  useEffect(() => {
+    if (galleryKey === GalleryFilterCategory.Carpathian) {
+      setGalleryData(images?.carpathianImages || []);
+    } else if (galleryKey === GalleryFilterCategory.Competition) {
+      setGalleryData(images?.competitionImages || []);
+    } else if (galleryKey === GalleryFilterCategory.Exam) {
+      setGalleryData(images?.examImages || []);
+    } else if (galleryKey === GalleryFilterCategory.Training) {
+      setGalleryData(images?.trainingImages || []);
+    }
+  }, [galleryKey]);
+
+  return (
+    <section className="py-[150px]">
+      <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
+        <div className="pl-[85px] xl:pl-[30px] max-w-[597px] text-3xl font-semibold">
+          СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
+        </div>
+        <div className=" xl:pl-[30px]  xl:pt-[36px]">
+          <div className="flex">
+            <FilterButton
+              name={"Екзамен на пояс"}
+              onClick={() => setGalleryKey("exam")}
+              styleProp={"mb-3 mr-3"}
+              activeButton={galleryKey === "exam"}
+            />
+            <FilterButton
+              name={" Змагання"}
+              onClick={() => setGalleryKey("competition")}
+              styleProp={"mb-3 mr-3"}
+              activeButton={galleryKey === "competition"}
+            />
+          </div>
+          <div className="flex">
+            <FilterButton
+              name={"Літній табір"}
+              onClick={() => setGalleryKey("carpathian")}
+              styleProp={"mb-3 mr-3"}
+              activeButton={galleryKey === "carpathian"}
+            />
+            <FilterButton
+              name={"Тренування"}
+              onClick={() => setGalleryKey("training")}
+              styleProp={"mb-3 mr-3"}
+              activeButton={galleryKey === "training"}
+            />
+          </div>
+        </div>
+        <div className="flex items-end pb-3 xl:pl-[30px] xl:pt-9">
+          <button
+            className="custom-swiper-button-prev"
+            style={{
+              height: "14px",
+              background: "inherit",
+              borderRight: "2px solid #DE4B55B2",
+              paddingRight: "3px",
+              color: "#ababab",
+              transition: "color 0.3s ease-in-out",
+              cursor: "pointer",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "black";
+              e.currentTarget.style.borderRight = "2px solid #E61717";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "#ababab";
+              e.currentTarget.style.borderRight = "2px solid #DE4B55B2";
+            }}
+          >
+            Назад
+          </button>
+          <button
+            className="custom-swiper-button-next"
+            style={{
+              height: "14px",
+              background: "inherit",
+              borderLeft: "2px solid #DE4B55B2",
+              marginLeft: "14px",
+              paddingLeft: "3px",
+              color: "#ababab",
+              transition: "color 0.3s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "black";
+              e.currentTarget.style.borderLeft = "2px solid #E61717";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "#ababab";
+              e.currentTarget.style.borderLeft = "2px solid #DE4B55B2";
+            }}
+          >
+            Вперед
+          </button>
+        </div>
+      </div>
+
+      <Swiper
+        navigation={{
+          nextEl: ".custom-swiper-button-next",
+          prevEl: ".custom-swiper-button-prev",
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Navigation, FreeMode, Autoplay]}
+        slidesPerView={3}
+        spaceBetween={10}
+        freeMode={true}
+        className="mySwiper"
+      >
+        {galleryData.map(({ folder, photo }) => (
+          <SwiperSlide key={photo}>
+            <img src={`../public/images/${folder}/${photo}.jpg`} alt={photo} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="flex justify-center pt-10">
+        <a href="#form">
+          <SignUpButtonOutline />
+        </a>
+      </div>
+    </section>
+  );
 };
