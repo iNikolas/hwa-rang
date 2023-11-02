@@ -1,6 +1,7 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { domAnimation, LazyMotion, domMax } from "framer-motion";
+import { ToastContainer } from "react-toastify";
 
 import "./App.module.scss";
 import { AboutSection } from "./components/AboutSection";
@@ -47,6 +48,7 @@ function App() {
             <Form methods={methods} />
             <Footer />
           </FormProvider>
+          <ToastContainer />
         </ThemeProvider>
       </LazyMotion>
     </LazyMotion>

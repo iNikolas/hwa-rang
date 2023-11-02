@@ -1,5 +1,7 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
+import { toast } from "react-toastify";
+import Dialog from "@mui/material/Dialog";
 
 import formAPI from "data/form.json";
 
@@ -19,21 +21,43 @@ import {
 export const Form: React.FC<{
   methods: UseFormReturn<FormSchema>;
 }> = ({ methods }) => {
-  const handleSubmit = async (rawData: FormSchema) => {
-    const formData = new URLSearchParams();
+  const [loading, setLoading] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
 
-    for (const key in rawData) {
-      formData.append(key, rawData[key]);
+  const handleSubmit = async (rawData: FormSchema) => {
+    if (loading) {
+      return;
     }
 
-    const response = await fetch(formAPI.action, {
-      method: "POST",
-      body: formData,
-      headers: { "Content-Type": formAPI["content-type"] },
+    const formData = new URLSearchParams();
+
+    Object.entries(rawData).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        return formData.append(key, value.join(", "));
+      }
+      formData.append(key, value);
     });
 
-    console.log(response);
+    try {
+      setLoading(true);
+      await fetch(formAPI.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Content-Type": formAPI["content-type"] },
+      });
+      setSubmitted(true);
+    } catch (e) {
+      if (e instanceof Error) {
+        toast(`Не вдалося надіслати форму: ${e.message}`, {
+          position: "bottom-center",
+          type: "error",
+        });
+      }
+    } finally {
+      setLoading(false);
+    }
   };
+
   return (
     <div className="lg:pl-0 pl-9 lg:pb-0 pb-7 bg-background">
       <div className="lg:block flex">
@@ -52,11 +76,12 @@ export const Form: React.FC<{
             <ForInput />
             <AgeInput />
             <HowToConnect />
-            <SubmitButton />
+            <SubmitButton loading={loading} />
           </div>
         </form>
         <LocationInfo />
       </div>
+      <Dialog open={submitted} fullScreen></Dialog>
     </div>
   );
 };

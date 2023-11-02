@@ -9,11 +9,18 @@ export const BasicButton: React.FC<
   React.HTMLAttributes<HTMLButtonElement> & {
     type: "button" | "submit" | "reset" | undefined;
     disabled?: boolean;
+    loading?: boolean;
   }
-> = ({ className, disabled = false, ...props }) => {
+> = ({ className, disabled = false, loading = false, ...props }) => {
+  const loadingStyle = loading && "animate-spin";
   return disabled ? (
     <button
-      className={cn(commonStyles, "text-disabled border-disabled", className)}
+      className={cn(
+        commonStyles,
+        "text-disabled border-disabled",
+        loadingStyle,
+        className
+      )}
       {...props}
     />
   ) : (
@@ -22,6 +29,7 @@ export const BasicButton: React.FC<
       className={cn(
         commonStyles,
         "border-border hover:bg-gradient hover:border-active-border hover:text-white hover:animate-gradient-shift",
+        loadingStyle,
         className
       )}
       style={{ backgroundSize: "200% 200%" }}
