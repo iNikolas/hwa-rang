@@ -53,7 +53,7 @@ export const HallsSection: React.FC = () => {
           <Title title={"НАШІ ЗАЛИ"} />
         </div>
 
-        <div className="flex flex-wrap justify-center items-center pb-[70px] xs:hidden">
+        <div className="flex flex-wrap gap-5 justify-center items-center pb-[70px] xs:hidden">
           {contacts.map((c) => (
             <ContactCard key={c.address} {...c}>
               <SignUpButton onClick={signUphandler(c.place)} />

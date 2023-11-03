@@ -37,7 +37,7 @@ export const ContactCard: React.FC<{
   desc,
 }) => {
   return (
-    <div className="flex flex-col justify-center my-5 p-[3%] mx-4 max-w-[691px] bg-white min-h-[371px]">
+    <div className="flex flex-col justify-center p-[3%] w-[691px] bg-white min-h-[433px]">
       <div className="border-b border-solid border-[#DCE7E9] mb-6">
         <p className="text-24 font-semibold pb-7">{place}</p>
         <Description className="pb-7">{address}</Description>
@@ -55,7 +55,7 @@ export const ContactCard: React.FC<{
           <a className="text-18 pb-5" href={`tel:${telephone}`}>
             {telephone}
           </a>
-          <div className="ml-[-25px]">{children}</div>
+          <div className="-ml-[25px]">{children}</div>
         </div>
       </div>
     </div>

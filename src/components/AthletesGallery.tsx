@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,10 +17,10 @@ enum GalleryFilterCategory {
 }
 
 export const AthletesGallery: React.FC = () => {
-  const [galleryData, setGalleryData] = useState(images.examImages);
-  const [galleryKey, setGalleryKey] = useState("exam");
+  const [galleryData, setGalleryData] = React.useState(images.examImages);
+  const [galleryKey, setGalleryKey] = React.useState("exam");
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (galleryKey === GalleryFilterCategory.Carpathian) {
       setGalleryData(images?.carpathianImages || []);
     } else if (galleryKey === GalleryFilterCategory.Competition) {
@@ -33,12 +33,12 @@ export const AthletesGallery: React.FC = () => {
   }, [galleryKey]);
 
   return (
-    <section className="py-[150px]">
+    <section className="sm:pl-[20px] tablet:pl-[30px] pl-[85px] py-[150px]">
       <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
-        <div className="pl-[85px] xl:pl-[30px] max-w-[597px] text-3xl font-semibold">
+        <div className="max-w-[597px] text-3xl font-semibold">
           СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
         </div>
-        <div className=" xl:pl-[30px]  xl:pt-[36px]">
+        <div className="xl:pt-[36px]">
           <div className="flex">
             <FilterButton
               name={"Екзамен на пояс"}
@@ -126,14 +126,26 @@ export const AthletesGallery: React.FC = () => {
           disableOnInteraction: false,
         }}
         modules={[Navigation, FreeMode, Autoplay]}
-        slidesPerView={3}
-        spaceBetween={10}
+        slidesPerView="auto"
+        spaceBetween={13}
+        breakpoints={{
+          639: {
+            spaceBetween: 21,
+          },
+          1023: {
+            spaceBetween: 24,
+          },
+        }}
         freeMode={true}
         className="mySwiper"
       >
         {galleryData.map(({ folder, photo }) => (
-          <SwiperSlide key={photo}>
-            <img src={`/images/${folder}/${photo}.jpg`} alt={photo} />
+          <SwiperSlide className="!w-fit" key={photo}>
+            <img
+              className="sm:max-h-[174px] tablet:max-h-[288px] max-h-[456px]"
+              src={`/images/${folder}/${photo}.jpg`}
+              alt={photo}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
