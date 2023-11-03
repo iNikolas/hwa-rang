@@ -32,6 +32,7 @@ export default {
         gradient:
           "linear-gradient(45deg,rgba(6, 19, 44, 1),rgba(107, 44, 104, 1),rgba(222, 75, 87, 1))",
         taekwondo: "url(/images/taekwondo.png)",
+        "kyiv-kyiv": "url(/kyiv-kyiv.png)",
       },
       colors: {
         secondary: "#0D0D0D99",

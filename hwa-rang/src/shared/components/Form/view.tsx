@@ -1,7 +1,6 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
 import { toast } from "react-toastify";
-import Dialog from "@mui/material/Dialog";
 
 import formAPI from "data/form.json";
 
@@ -17,6 +16,7 @@ import {
   HowToConnect,
   LocationInfo,
 } from "./components";
+import { SuccessFormSent } from "./components/SuccessFormSent";
 
 export const Form: React.FC<{
   methods: UseFormReturn<FormSchema>;
@@ -80,8 +80,14 @@ export const Form: React.FC<{
           </div>
         </form>
         <LocationInfo />
+        <SuccessFormSent
+          open={submitted}
+          onClose={() => {
+            setSubmitted(false);
+            methods.reset();
+          }}
+        />
       </div>
-      <Dialog open={submitted} fullScreen></Dialog>
     </div>
   );
 };

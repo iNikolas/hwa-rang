@@ -29,7 +29,6 @@ export const AthletesGallery: React.FC = () => {
   const [images, setImages] = useState<GalleryData | null>(null);
   const [galleryData, setGalleryData] = useState<Image[]>([]);
   const [galleryKey, setGalleryKey] = useState("exam");
-  console.log(galleryData);
 
   useEffect(() => {
     const fetchData = async () => {
