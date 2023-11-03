@@ -7,7 +7,7 @@
     "start:tailwind": "cd hwa-rang && npx tailwindcss -i ./src/index.css -o ./dist/index.css --watch",
     "start:both": "concurrently \"npm run start:frontend\" \"npm run start:tailwind\"",
     "start": "yarn && yarn run start:both",
-    "build": "cd hwa-rang && build"
+    "build": "cd hwa-rang && yarn run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.1"
