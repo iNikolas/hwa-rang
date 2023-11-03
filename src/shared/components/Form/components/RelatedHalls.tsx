@@ -1,11 +1,9 @@
 import React from "react";
 import { m } from "framer-motion";
+import { useFormContext } from "react-hook-form";
 
 import hallsData from "data/halls.json";
 import { cn } from "utils/index";
-
-import { Choice } from "../types";
-import { useFormContext } from "react-hook-form";
 
 const Caption = ({
   className,
@@ -34,25 +32,24 @@ const Description = ({
   );
 };
 
-export function RelatedHalls({ trainer, selectedHall }: Choice) {
-  const [selected, setSelected] = React.useState(selectedHall);
+export function RelatedHalls({ trainer }: { trainer: string }) {
+  const { watch } = useFormContext();
+  const selectedHall: string = watch("hall");
+
   const relatedHalls = hallsData.filter((h) => h.trainer === trainer);
 
   const { setValue } = useFormContext();
 
   const hall = relatedHalls.find(
-    (h) => h.name.toLowerCase() === selected.toLowerCase()
+    (h) => h.name.toLowerCase() === selectedHall.toLowerCase()
   );
-
-  React.useEffect(() => {
-    setSelected(selectedHall);
-  }, [selectedHall]);
 
   return (
     <div className="mt-[43px]">
       <div className="border-b border-white flex mb-[28px]">
         {relatedHalls.map((hall, index) => {
-          const activeTab = selected.toLowerCase() === hall.name.toLowerCase();
+          const activeTab =
+            selectedHall.toLowerCase() === hall.name.toLowerCase();
           return (
             <div
               key={hall.name}

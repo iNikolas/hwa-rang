@@ -1,9 +1,13 @@
+import { useFormContext } from "react-hook-form";
+
 import trainersData from "data/trainers.json";
 
-import { Choice } from "../types";
 import { RelatedHalls } from "./RelatedHalls";
 
-export function TrainerProfile({ trainer, selectedHall }: Choice) {
+export function TrainerProfile({ trainer }: { trainer: string }) {
+  const { watch } = useFormContext();
+  const selectedHall: string = watch("hall");
+
   const trainerData = trainersData.find((t) => t.name === trainer);
 
   const hallName = selectedHall.split("/").map((h) => h.trim());
@@ -43,7 +47,7 @@ export function TrainerProfile({ trainer, selectedHall }: Choice) {
           </div>
         </div>
       </div>
-      <RelatedHalls trainer={trainer} selectedHall={selectedHall} />
+      <RelatedHalls trainer={trainer} />
     </div>
   );
 }

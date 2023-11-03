@@ -22,11 +22,7 @@ export function LocationInfo() {
 
   return (
     <div className="bg-dark-blue w-full lg:hidden">
-      {trainer ? (
-        <TrainerProfile trainer={trainer} selectedHall={selectedHall} />
-      ) : (
-        <NoTrainerStub />
-      )}
+      {trainer ? <TrainerProfile trainer={trainer} /> : <NoTrainerStub />}
     </div>
   );
 }
