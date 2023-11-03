@@ -24,7 +24,8 @@
       "theme/*": ["./theme/*"],
       "data/*": ["./data/*"],
       "shared/*": ["./shared/*"],
-      "utils/*": ["shared/utils/*"]
+      "utils/*": ["shared/utils/*"],
+      "assets/*": ["assets/*"]
     }
   },
   "include": ["src"],

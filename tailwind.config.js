@@ -40,6 +40,7 @@ export default {
         "dark-blue": "#29507F",
         border: "#0e0d0d",
         "custom-black": "#0D0D0D",
+        "alternative-black": "#181A1D",
         "active-border": "rgba(6,19,44,1)",
         disabled: "#ADADAD",
         "tint-white": "#F7F1F1",
