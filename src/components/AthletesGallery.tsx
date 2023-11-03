@@ -167,7 +167,7 @@ export const AthletesGallery: React.FC = () => {
       >
         {galleryData.map(({ folder, photo }) => (
           <SwiperSlide key={photo}>
-            <img src={`../public/images/${folder}/${photo}.jpg`} alt={photo} />
+            <img src={`/images/${folder}/${photo}.jpg`} alt={photo} />
           </SwiperSlide>
         ))}
       </Swiper>

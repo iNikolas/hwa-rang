@@ -48,21 +48,21 @@ export const HallsSection: React.FC = () => {
 
   return (
     <section id="halls" className=" mt-[170px] bg-[#DCE7E9] ">
-      <div className="bg-[url('../../public/kyiv-bg.svg')] bg-no-repeat bg-cover h-full bg-top">
+      <div className="bg-[url('/kyiv-bg.svg')] bg-no-repeat bg-cover h-full bg-top">
         <div className="px-[20px] ml-[90px] pt-[75px] max-w-[516px] md:pl-0 md:ml-[20px]">
           <Title title={"НАШІ ЗАЛИ"} />
         </div>
 
         <div className="flex flex-wrap justify-center items-center pb-[70px] xs:hidden">
           {contacts.map((c) => (
-            <ContactCard {...c}>
+            <ContactCard key={c.address} {...c}>
               <SignUpButton onClick={signUphandler(c.place)} />
             </ContactCard>
           ))}
         </div>
         <div className="hidden xs:flex flex-col">
           {contacts.map((c) => (
-            <AccordionCardHall {...c}>
+            <AccordionCardHall key={c.address} {...c}>
               <SignUpButton onClick={signUphandler(c.place)} />
             </AccordionCardHall>
           ))}

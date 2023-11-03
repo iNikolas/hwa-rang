@@ -5,49 +5,46 @@
 
 @font-face {
   font-family: PP Neue Montreal;
-  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-book.otf")
-    format("opentype");
+  src: url("/fonts/pp-neue-montreal/ppneuemontreal-book.otf") format("opentype");
 }
 
 @font-face {
   font-family: PP Neue Montreal;
   font-weight: 200;
-  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-thin.otf")
-    format("opentype");
+  src: url("/fonts/pp-neue-montreal/ppneuemontreal-thin.otf") format("opentype");
 }
 
 @font-face {
   font-family: PP Neue Montreal;
   font-weight: 500;
-  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-medium.otf")
+  src: url("/fonts/pp-neue-montreal/ppneuemontreal-medium.otf")
     format("opentype");
 }
 
 @font-face {
   font-family: PP Neue Montreal;
   font-weight: 700;
-  src: url("../public/fonts/pp-neue-montreal/ppneuemontreal-bold.otf")
-    format("opentype");
+  src: url("/fonts/pp-neue-montreal/ppneuemontreal-bold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Satoshi";
-  src: url("../public/fonts/Satoshi-Black.woff2") format("woff2");
+  src: url("/fonts/Satoshi-Black.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "PP Monument Extended";
-  src: url("../public/fonts/MonumentExtended-Black.ttf");
+  src: url("/fonts/MonumentExtended-Black.ttf");
 }
 
 @font-face {
   font-family: "MontserratBlack";
-  src: url("../public/fonts/Montserrat-Black.ttf");
+  src: url("/fonts/Montserrat-Black.ttf");
 }
 
 @font-face {
   font-family: "MontserratBold";
-  src: url("../public/fonts/Montserrat-ExtraBold.ttf");
+  src: url("/fonts/Montserrat-ExtraBold.ttf");
 }
 
 :root {
