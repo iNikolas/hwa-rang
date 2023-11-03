@@ -3,20 +3,11 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, FreeMode, Autoplay } from "swiper/modules";
+
+import images from "data/galleryImages.json";
+
 import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
 import { FilterButton } from "../shared/components/btns/FilterButton";
-
-type Image = {
-  folder: string;
-  photo: string;
-};
-
-type GalleryData = {
-  carpathianImages: Image[];
-  examImages: Image[];
-  competitionImages: Image[];
-  trainingImages: Image[];
-};
 
 enum GalleryFilterCategory {
   Exam = "exam",
@@ -26,33 +17,8 @@ enum GalleryFilterCategory {
 }
 
 export const AthletesGallery: React.FC = () => {
-  const [images, setImages] = useState<GalleryData | null>(null);
-  const [galleryData, setGalleryData] = useState<Image[]>([]);
+  const [galleryData, setGalleryData] = useState(images.examImages);
   const [galleryKey, setGalleryKey] = useState("exam");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("src/shared/galleryImages.json");
-        if (!response.ok) {
-          throw new Error("Помилка запиту до сервера");
-        }
-        const jsonData = await response.json();
-
-        setImages(jsonData);
-      } catch (error) {
-        console.error("Помилка отримання даних:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    if (images) {
-      setGalleryData(images.examImages || []);
-    }
-  }, [images]);
 
   useEffect(() => {
     if (galleryKey === GalleryFilterCategory.Carpathian) {
