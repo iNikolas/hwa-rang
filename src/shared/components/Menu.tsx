@@ -37,7 +37,7 @@ export const MenuMobile: React.FC<Omit<DrawerProps, "onClose">> = ({
         MENU
       </span>
       <Drawer
-        className="[&_.MuiPaper-root]:p-[32px] [&_.MuiPaper-root]:w-[321px]"
+        className="[&_.MuiPaper-root]:p-[32px] [&_.MuiPaper-root]:max-w-[321px] [&_.MuiPaper-root]:w-full"
         anchor="left"
         onClose={handleClose}
         open={show}
