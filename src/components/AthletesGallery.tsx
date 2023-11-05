@@ -35,10 +35,10 @@ export const AthletesGallery: React.FC = () => {
   return (
     <section className="sm:pl-[20px] tablet:pl-[30px] pl-[85px] lg:py-[60px] py-[75px] bg-background">
       <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
-        <div className="max-w-[597px] text-3xl font-semibold">
+        <div className="max-w-[597px] sm:text-[20px] text-[36px] sm:leading-[26px] leading-[46.8px] sm:font-semibold font-bold">
           СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
         </div>
-        <div className="xl:pt-[36px]">
+        <div className="xl:pt-[24px] tablet:pt-[36px]">
           <div className="flex">
             <FilterButton
               name={"Екзамен на пояс"}
@@ -68,7 +68,7 @@ export const AthletesGallery: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex items-end sm:pb-6 xl-tablet:pb-[18px] xl:pt-9 leading-none">
+        <div className="flex items-end sm:pb-6 xl-tablet:pb-[18px] sm:pt-7 xl-tablet:pt-[80px] leading-none">
           <button
             className="custom-swiper-button-prev"
             style={{

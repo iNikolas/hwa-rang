@@ -47,23 +47,29 @@ export const HallsSection: React.FC = () => {
   };
 
   return (
-    <section id="halls" className=" mt-[170px] bg-[#DCE7E9] ">
+    <section
+      id="halls"
+      className="mt-[158px] tablet:mt-[107px] sm:mt-[60px] bg-[#DCE7E9] "
+    >
       <div className="bg-[url('/kyiv-bg.svg')] bg-no-repeat bg-cover h-full bg-top">
-        <div className="px-[20px] ml-[90px] pt-[75px] max-w-[516px] md:pl-0 md:ml-[20px]">
+        <div className="sm:pt-[30px] sm:pb-[30px] tablet:pt-[71px] tablet:pb-[50px] pt-[150px] pb-[39px] px-[20px] ml-[90px] md:pl-0 md:ml-[20px]">
           <Title title={"НАШІ ЗАЛИ"} />
         </div>
 
-        <div className="flex flex-wrap gap-5 justify-center items-center pb-[70px] xs:hidden">
+        <div className="flex flex-wrap gap-5 justify-center items-center pb-[70px] sm:hidden mx-5">
           {contacts.map((c) => (
             <ContactCard key={c.address} {...c}>
               <SignUpButton onClick={signUphandler(c.place)} />
             </ContactCard>
           ))}
         </div>
-        <div className="hidden xs:flex flex-col">
+        <div className="hidden sm:flex flex-col">
           {contacts.map((c) => (
             <AccordionCardHall key={c.address} {...c}>
-              <SignUpButton onClick={signUphandler(c.place)} />
+              <SignUpButton
+                className="text-left"
+                onClick={signUphandler(c.place)}
+              />
             </AccordionCardHall>
           ))}
         </div>

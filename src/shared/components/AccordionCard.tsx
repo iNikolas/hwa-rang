@@ -26,7 +26,7 @@ export const AccordionCardHall: React.FC<{
   const toggleOpen = () => setOpen((cur) => !cur);
   return (
     <>
-      <Card className="p-3 m-2">
+      <Card className="p-3 mx-2 mb-5">
         <div className="relative">
           <p className="text-18 font-semibold pb-7">{place}</p>
           <p className="text-18 font-normal pb-7">{address}</p>
@@ -52,7 +52,7 @@ export const AccordionCardHall: React.FC<{
           <a className="pb-5 block" href={`tel:${telephone}`}>
             {telephone}
           </a>
-          <div className="flex justify-center">{children}</div>
+          <div>{children}</div>
           <div className="flex justify-end">
             <button
               className="text-14 font-normal leading-21 tracking-normal text-slate-500 border-b-2"
