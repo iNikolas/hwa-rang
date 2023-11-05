@@ -3,11 +3,14 @@ import { Card, CardHeader, CardBody } from "@material-tailwind/react";
 
 export const CoachesSection: React.FC = () => {
   return (
-    <section id="trainers" className="py-[50px]">
-      <div className="pl-[85px] md:pl-[36px] pb-7">
-        <Title title={"НАШІ ТРЕНЕРИ"} style="max-w-[500px]" />
+    <section
+      id="trainers"
+      className="sm:pb-[108px] tablet:pb-[72px] pb-[150px]"
+    >
+      <div className="sm:pt-[60px] sm:bg-background pl-[85px] md:pl-[36px] sm:pb-[30px] tablet:pb-[60px] pb-[40px]">
+        <Title title="НАШІ ТРЕНЕРИ" />
       </div>
-      <Card className="w-full flex-row lg:flex-col lg:items-center justify-between pr-[20px] lg:px-[30px]">
+      <Card className="w-full flex-row lg:flex-col lg:items-center justify-between tablet:px-[30px]">
         <CardHeader
           shadow={false}
           floated={false}
@@ -19,8 +22,8 @@ export const CoachesSection: React.FC = () => {
             className="h-full w-full object-cover"
           />
         </CardHeader>
-        <CardBody className="w-full pl-[10%] xs:pl-0 pt-[6%]">
-          <p className="mb-4 uppercase text-32 md:text-24 font-bold pb-[40px] lg:pt-6 xs:pb-0">
+        <CardBody className="w-full pl-[10%] sm:px-4 pt-[6%]">
+          <p className="mb-4 uppercase text-32 md:text-24 font-bold pb-[40px] sm:pt-0 tablet:pt-6 xs:pb-0">
             Долецький Олексій Вікторович
           </p>
           <p className="mb-2 uppercase text-24 md:text-18 font-bold pb-2">
@@ -46,8 +49,8 @@ export const CoachesSection: React.FC = () => {
           <a href="tel:0975135810">097 513 58 10</a>
         </CardBody>
       </Card>
-      <Card className="w-full flex-row lg:flex-col-reverse lg:items-center justify-between lg:px-[30px] pt-5">
-        <CardBody className="w-full pl-[85px] xs:pl-0 pt-[6%]">
+      <Card className="w-full flex-row lg:flex-col-reverse lg:items-center justify-between pt-[78px] tablet:pt-[60px] tablet:px-[30px]">
+        <CardBody className="w-full pl-[85px] sm:px-5">
           <p className="mb-4 uppercase text-32 md:text-24 font-bold pb-[40px] lg:pt-6 xs:pb-0">
             ФІЛАТОВ ІГОР ВАСИЛЬОВИЧ
           </p>

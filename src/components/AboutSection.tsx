@@ -6,7 +6,7 @@ export const AboutSection: React.FC = () => {
     <>
       <section
         id="about"
-        className="relative pt-[170px] lg:pt-[70px] pl-[85px] pr-[20px] lg:px-[30px] pb-[15px] overflow-visible"
+        className="relative sm:pt-[60px] tablet:pt-[108px] pt-[142px] pl-[85px] pr-[20px] lg:px-[30px] pb-[15px] overflow-visible"
       >
         <div className="flex justify-between">
           <h2
@@ -18,12 +18,12 @@ export const AboutSection: React.FC = () => {
           >
             TAE
           </h2>
-          <div className="mt-[60px] 1xl:absolute top-0 left-[85px] lg:left-[30px]">
+          <div className="1xl:absolute sm:top-[60px] tablet:top-[108px] top-[142px] left-[85px] lg:left-[30px]">
             <Title title={"ПРО КЛУБ"} />
           </div>
 
           <div className="flex flex-col items-start max-w-[477px]">
-            <p className="mt-[60px] md:text-18">
+            <p className="mt-[60px] xl-tablet:mt-[100px] md:text-18">
               Наш клуб є частиною олімпійського руху. Ми орієнтовані на
               спортивні досягнення наших учнів та розвиток олімпійського
               тхеквондо в Україні.

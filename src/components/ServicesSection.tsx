@@ -37,8 +37,8 @@ export const ServicesSection: React.FC = () => {
       id="services"
       className="flex flex-col pl-[85px] pr-[18px] md:px-[30px] xs:px-[20px]"
     >
-      <Title title={"НАШІ ПОСЛУГИ"} style="max-w-[460px]" />
-      <div className="flex gap-x-[20px] gap-y-[60px] md:flex-col pt-7 xs:pt-0 justify-between">
+      <Title title={"НАШІ ПОСЛУГИ"} />
+      <div className="flex gap-x-[20px] gap-y-[60px] md:flex-col pt-[30px] tablet:pt-[60px] justify-between">
         {advantage.map(({ title, img, desc }, index) => (
           <Card className="w-[430px] md:w-full justify-between" key={index}>
             <div>
