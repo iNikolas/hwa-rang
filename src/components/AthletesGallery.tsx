@@ -33,7 +33,7 @@ export const AthletesGallery: React.FC = () => {
   }, [galleryKey]);
 
   return (
-    <section className="sm:pl-[20px] tablet:pl-[30px] pl-[85px] py-[150px]">
+    <section className="sm:pl-[20px] tablet:pl-[30px] pl-[85px] lg:py-[60px] py-[75px] bg-background">
       <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
         <div className="max-w-[597px] text-3xl font-semibold">
           СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
@@ -68,11 +68,10 @@ export const AthletesGallery: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex items-end pb-3 xl:pl-[30px] xl:pt-9">
+        <div className="flex items-end sm:pb-6 xl-tablet:pb-[18px] xl:pt-9 leading-none">
           <button
             className="custom-swiper-button-prev"
             style={{
-              height: "14px",
               background: "inherit",
               borderRight: "2px solid #DE4B55B2",
               paddingRight: "3px",
@@ -94,7 +93,6 @@ export const AthletesGallery: React.FC = () => {
           <button
             className="custom-swiper-button-next"
             style={{
-              height: "14px",
               background: "inherit",
               borderLeft: "2px solid #DE4B55B2",
               marginLeft: "14px",

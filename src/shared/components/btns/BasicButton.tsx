@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "../../utils";
 
 const commonStyles =
-  "w-full xs:max-w-none max-w-[328px] h-[56px] uppercase text-14 font-bold cursor-pointer border transition before:content-['/_'] hover:before:content-['\\_']";
+  "w-full xs:max-w-none max-w-[328px] h-[56px] uppercase !text-14 font-bold cursor-pointer border transition before:content-['/_'] hover:before:content-['\\_']";
 
 export const BasicButton: React.FC<
   React.HTMLAttributes<HTMLButtonElement> & {

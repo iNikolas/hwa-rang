@@ -70,6 +70,8 @@ export default {
       screens: {
         tablet: { min: "639px", max: "1023px" },
 
+        "xl-tablet": { min: "639px", max: "1250px" },
+
         "2xl": { max: "1535px" },
 
         "1xl": { max: "1371px" },

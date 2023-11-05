@@ -8,13 +8,13 @@ export const Header: React.FC = () => {
   return (
     <header className="relative flex md:flex-col h-[750px]">
       <div className="relative md:flex items-center justify-between hidden bg-white px-[20px] h-[86px]"></div>
-      <div className="absolute z-30 left-[15px] top-[30px] font-fontMonument bg-gradient-to-r from-[#BA2E30] via-[#A277A9] to-[#F85253] text-transparent bg-clip-text font-semibold text-[20px] text-center">
+      <div className="absolute z-30 left-[15px] top-[30px] tablet:top-[20px] font-fontMonument bg-gradient-to-r from-[#BA2E30] via-[#A277A9] to-[#F85253] text-transparent bg-clip-text font-extrabold text-[32px] sm:text-[20px] text-center">
         HWA-RANG
       </div>
       <div className="absolute lg:flex hidden flex-row-reverse top-[32px] right-0 z-10">
         <MenuMobile />
       </div>
-      <div className="relative flex justify-end  md:h-full pt-[36px] bg-[url('/src/assets/banner.png')] xs:bg-[url('/src/assets/banner-mobile.png')] bg-cover  w-3/5  md:w-full lg:bg-center">
+      <div className="relative flex justify-end md:h-full pt-[36px] bg-[url('/src/assets/banner.png')] xs:bg-[url('/src/assets/banner-mobile.png')] bg-cover w-3/5 md:w-full lg:bg-center">
         <nav className="lg:hidden">
           <ul className="flex justify-between pr-2 mt-[5px] text-14 xl:text-12">
             <li className="pl-[35px] xl:pl-[15px] text-white font-medium">
@@ -33,21 +33,21 @@ export const Header: React.FC = () => {
           <span className="pl-9">{title2}</span>
         </div>
       </div>
-      <div className="absolute md:block hidden top-1/2 left-[30px] -translate-y-1/2 xs:mt-[50px] ">
-        <h1 className="mb-3 text-white text-58 sm:text-48 font-extrabold uppercase md:normal-case  xs:mb-[24px]">
+      <div className="absolute md:block hidden sm:bottom-[67px] tablet:top-1/2 sm:left-[20px] left-[30px] tablet:-translate-y-1/2 xs:mt-[50px] sm:max-w-[335px] sm:w-full">
+        <h1 className="mb-3 text-white text-58 sm:text-48 leading-none font-bold uppercase md:normal-case sm:mb-[30px]">
           Тхеквандо <br /> для дітей <br />
           та дорослих
         </h1>
-        <h3 className="pb-[25px] text-white text-24 font-semibold tracking-normal">
+        <h3 className="sm:pb-[60px] pb-[50px] text-white text-24 sm:leading-[31.2px] leading-[36px] font-semibold sm:font-[500] tracking-normal">
           Тренування для всіх,
           <br /> незалежно від рівня <br />
           підготовки
         </h3>
         <a href="#form">
-          <SignUpButtonOutline />
+          <SignUpButtonOutline className="w-full sm:max-w-[335px]" />
         </a>
       </div>
-      <div className="relative flex flex-col pt-[36px] w-2/5  md:hidden">
+      <div className="relative flex flex-col pt-[36px] w-2/5 md:hidden">
         <nav className="lg:hidden">
           <ul className="flex pl-[15px] xl:pl-[10px] mt-[5px] text-14 xl:text-12 font-medium">
             <li className="font-medium">
@@ -65,9 +65,7 @@ export const Header: React.FC = () => {
           <h1 className="mb-3 text-black text-58 1xl:text-42 font-extrabold uppercase md:normal-case tracking-normal leading-[69px]">
             Тхеквандо <br /> для дорослих <br /> та дітей
           </h1>
-          <h3 className="pb-[25px] text-black text-24 font-bold tracking-normal">
-            Тренування для всіх, незалежно <br /> від рівня підготовки
-          </h3>
+          <h3 className="pb-[25px] text-black text-24 font-bold tracking-normal"></h3>
           <a href="#form">
             <SignUpButtonOutline />
           </a>
