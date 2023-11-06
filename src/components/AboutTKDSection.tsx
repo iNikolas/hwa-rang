@@ -1,6 +1,6 @@
 import { Title } from "../shared/components/Title";
 import React from "react";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 
 export const AboutTKDSection: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ export const AboutTKDSection: React.FC = () => {
       </div>
 
       <ReactPlayer
-        url="https://www.youtube.com/embed/l0cM1YV_rYA?si=qqTNujd54mePbcyJ"
+        url="https://www.youtube.com/watch?v=u47tgx4lX98"
         width={"100%"}
         height={"576px"}
       />

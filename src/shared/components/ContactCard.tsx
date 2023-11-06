@@ -22,7 +22,7 @@ const Description: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
     <p
       {...props}
       className={cn(
-        "text-18 leading-[27px] font-pp-neue-montreal tracking-wide",
+        "text-18 leading-[23.4px] font-pp-neue-montreal tracking-wide",
         className
       )}
     />
@@ -49,9 +49,9 @@ export const ContactCard: React.FC<{
   desc,
 }) => {
   return (
-    <div className="flex flex-col justify-center p-[3%] max-w-[691px] w-full bg-white min-h-[416px]">
+    <div className="flex flex-col justify-center p-[3%] max-w-[691px] w-full bg-white">
       <div className="border-b border-solid border-[#DCE7E9] mb-6">
-        <p className="text-24 font-semibold pb-7">
+        <p className="text-24 leading-none font-semibold pb-7">
           {splitName({ name: place ?? "" })
             .map(
               ({ normalCasePart, uppercasePart }) =>
@@ -59,22 +59,22 @@ export const ContactCard: React.FC<{
             )
             .join(" / ")}
         </p>
-        <Description className="pb-7">{address}</Description>
+        <Description className="pb-7 leading-none">{address}</Description>
       </div>
       <div className="flex justify-between">
-        <div className="pb-5 pr-5">
+        <div className="pr-5">
           <Caption>РОЗКЛАД</Caption>
           <Description>{group}</Description>
-          <Description className="pb-5">{schedule}</Description>
-          <Description>{desc ?? ""}</Description>
+          <Description className={cn(desc && "pb-5")}>{schedule}</Description>
+          {desc && <Description>{desc}</Description>}
         </div>
-        <div className="pb-5 px-5">
+        <div className="px-5">
           <Caption>ТРЕНЕР</Caption>
           <Description>{coach}</Description>
           <a className="text-18 pb-5" href={`tel:${telephone}`}>
             {telephone}
           </a>
-          <div className="-ml-[25px]">{children}</div>
+          <div className="-ml-[25px] mt-5">{children}</div>
         </div>
       </div>
     </div>
