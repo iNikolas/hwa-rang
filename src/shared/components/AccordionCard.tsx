@@ -2,6 +2,8 @@ import React, { ReactNode } from "react";
 import { Collapse } from "react-collapse";
 import { Card } from "@material-tailwind/react";
 
+import { splitName } from "utils/index";
+
 export const AccordionCardHall: React.FC<{
   place?: string;
   address?: string;
@@ -28,7 +30,14 @@ export const AccordionCardHall: React.FC<{
     <>
       <Card className="p-3 mx-2 mb-5">
         <div className="relative">
-          <p className="text-18 font-semibold pb-7">{place}</p>
+          <p className="text-18 font-semibold pb-7">
+            {splitName({ name: place ?? "" })
+              .map(
+                ({ normalCasePart, uppercasePart }) =>
+                  normalCasePart + uppercasePart
+              )
+              .join(" / ")}
+          </p>
           <p className="text-18 font-normal pb-7">{address}</p>
           {!open && (
             <div className="flex justify-end">

@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import { cn } from "utils/index";
+import { cn, splitName } from "utils/index";
 
 const Description: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
   className,
@@ -39,7 +39,14 @@ export const ContactCard: React.FC<{
   return (
     <div className="flex flex-col justify-center p-[3%] max-w-[691px] w-full bg-white min-h-[433px]">
       <div className="border-b border-solid border-[#DCE7E9] mb-6">
-        <p className="text-24 font-semibold pb-7">{place}</p>
+        <p className="text-24 font-semibold pb-7">
+          {splitName({ name: place ?? "" })
+            .map(
+              ({ normalCasePart, uppercasePart }) =>
+                normalCasePart + uppercasePart
+            )
+            .join(" / ")}
+        </p>
         <Description className="pb-7">{address}</Description>
       </div>
       <div className="flex justify-between">

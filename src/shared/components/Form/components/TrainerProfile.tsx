@@ -3,14 +3,13 @@ import { useFormContext } from "react-hook-form";
 import trainersData from "data/trainers.json";
 
 import { RelatedHalls } from "./RelatedHalls";
+import { splitName } from "shared/utils";
 
 export function TrainerProfile({ trainer }: { trainer: string }) {
   const { watch } = useFormContext();
   const selectedHall: string = watch("hall");
 
   const trainerData = trainersData.find((t) => t.name === trainer);
-
-  const hallName = selectedHall.split("/").map((h) => h.trim());
 
   return (
     <div className="p-[55px] text-white">
@@ -24,19 +23,19 @@ export function TrainerProfile({ trainer }: { trainer: string }) {
         </div>
         <div className="flex flex-col justify-between">
           <div>
-            {hallName.map((n) => {
-              const splittedName = n.split(" ");
-
-              const normalCasePart = `${splittedName[0]} `;
-              const uppercasePart = splittedName.slice(1).join(" ");
-
-              return (
-                <p key={n} className="text-[28px] font-bold">
-                  <span>{normalCasePart}</span>
-                  <span className="uppercase">{uppercasePart}</span>
-                </p>
-              );
-            })}
+            {splitName({ name: selectedHall }).map(
+              ({ normalCasePart, uppercasePart }) => {
+                return (
+                  <p
+                    key={normalCasePart + uppercasePart}
+                    className="text-[28px] font-bold"
+                  >
+                    {normalCasePart}
+                    {uppercasePart}
+                  </p>
+                );
+              }
+            )}
           </div>
           <div>
             <p className="text-[24px] font-bold">ТРЕНЕР</p>
