@@ -39,7 +39,7 @@ export const AdvantageSection: React.FC = () => {
             <CardBody>
               <p
                 color="blue-gray"
-                className="pt-6 md:pb-0 pb-[18px] sm:text-[20px] text-[24px] font-bold sm:font-semibold align-top sm:uppercase sm:leading-[26px] leading-[28.8px]"
+                className="tracking-[0.02rem] pt-6 md:pb-0 pb-[18px] sm:text-[20px] text-[24px] font-bold sm:font-semibold align-top sm:uppercase sm:leading-[26px] leading-[28.8px]"
               >
                 {title}
               </p>

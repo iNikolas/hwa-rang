@@ -48,7 +48,7 @@ export const ServicesSection: React.FC = () => {
               <CardBody>
                 <p
                   color="blue-gray"
-                  className="pt-[24px] tablet:pt-[30px] lg:pb-0 pb-4 text-24 xs:text-20 font-bold xs:font-semibold align-top"
+                  className="uppercase tracking-[0.04rem] pt-[24px] tablet:pt-[30px] lg:pb-0 pb-4 text-24 xs:text-20 font-bold xs:font-semibold align-top"
                 >
                   {title}
                 </p>

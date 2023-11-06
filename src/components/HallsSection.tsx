@@ -52,7 +52,7 @@ export const HallsSection: React.FC = () => {
       className="mt-[158px] tablet:mt-[107px] sm:mt-[60px] bg-[#DCE7E9] "
     >
       <div className="bg-[url('/kyiv-bg.svg')] bg-no-repeat bg-cover h-full bg-top">
-        <div className="sm:pt-[30px] sm:pb-[30px] tablet:pt-[71px] tablet:pb-[50px] pt-[150px] pb-[39px] px-[20px] ml-[90px] md:pl-0 md:ml-[20px]">
+        <div className="sm:pt-[30px] sm:pb-[30px] tablet:pt-[71px] tablet:pb-[50px] pt-[150px] pb-[39px] ml-[90px] md:pl-0 md:ml-[20px]">
           <Title title={"НАШІ ЗАЛИ"} />
         </div>
 
