@@ -72,6 +72,8 @@ export default {
 
         "xl-tablet": { min: "639px", max: "1250px" },
 
+        "md-tablet": { min: "639px", max: "767px" },
+
         "2xl": { max: "1535px" },
 
         "1xl": { max: "1371px" },
@@ -81,6 +83,8 @@ export default {
         lg: { max: "1023px" },
 
         md: { max: "767px" },
+
+        "sm-t-md": { max: "700px" },
 
         sm: { max: "639px" },
 

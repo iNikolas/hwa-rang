@@ -1,3 +1,4 @@
+import { GradientText } from "shared/components";
 import { MenuMobile } from "../shared/components/Menu";
 import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
 
@@ -28,6 +29,10 @@ export const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
+        <span className="absolute left-[30px] top-[59px] hidden md-tablet:block uppercase font-fontMonument [&_span]:leading-none [&_span]:text-[48px] [&_span]:font-extrabold">
+          <span className="text-white">kyiv</span>{" "}
+          <GradientText>taekwondo</GradientText>
+        </span>
         <div className="absolute right-0 top-[200px] font-fontMonument text-white text-80 xl:text-58 lg:hidden font-extrabold">
           <span> {title}</span>
           <span className="pl-9">{title2}</span>

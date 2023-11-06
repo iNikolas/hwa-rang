@@ -22,7 +22,7 @@ export const AboutSection: React.FC = () => {
             <Title title={"ПРО КЛУБ"} />
           </div>
 
-          <div className="flex flex-col items-start max-w-[477px]">
+          <div className="flex flex-col items-start tablet:max-w-[416px] max-w-[477px]">
             <p className="mt-[60px] xl-tablet:mt-[100px] md:text-18">
               Наш клуб є частиною олімпійського руху. Ми орієнтовані на
               спортивні досягнення наших учнів та розвиток олімпійського
@@ -50,7 +50,7 @@ export const AboutSection: React.FC = () => {
           >
             DO
           </h2>
-          <div className="flex flex-col items-start pl-[50px] lg:p-0 max-w-[477px]">
+          <div className="flex flex-col items-start pl-[50px] lg:p-0 tablet:max-w-[416px] max-w-[477px]">
             <p className="ml-90px mt-[70px] lg:mt-4 md:text-18">
               Ми працюємо з дітьми та дорослими будь- якого рівня підготовки. В
               нас тренуються як досвідченні спортсмени так і початківці.
@@ -67,14 +67,14 @@ export const AboutSection: React.FC = () => {
         >
           KYIV
         </h2>
-        <div className="flex flex-col items-start mt-[41px] ml-[30px] lg:ml-0 lg:mt-4 max-w-[477px]">
+        <div className="flex flex-col items-start mt-[41px] ml-[30px] lg:ml-0 lg:mt-4 tablet:max-w-[416px] max-w-[477px]">
           <p className="md:text-18">
             Індивідуальний підхід, ефективні персональні програми та
             збалансовані фізичні навантаження гарантовані!
           </p>
           <span className="lg:hidden  border-b border-[#f16669] w-[50%] mt-7 "></span>
         </div>
-        <div className="absolute md:hidden right-[50px] bottom-[50px] lg:bottom-[280px] font-Montserrat font-normal leading-24 tracking-[0.12em] ml-[50px] bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent uppercase">
+        <div className="absolute sm-t-md:hidden right-[50px] bottom-[50px] lg:bottom-1/2 lg:translate-y-full lg:right-[30px] font-Montserrat font-normal leading-24 tracking-[0.12em] ml-[50px] bg-gradient-to-r from-[#09142e] via-[#58275f] to-[#f85253] bg-clip-text text-transparent uppercase">
           <p className="lg:text-16">/ тренування для:</p>
           <p className="text-center lg:text-16">дітей</p>
           <p className="mr-[40px] lg:text-16">дорослих</p>

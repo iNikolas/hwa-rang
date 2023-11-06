@@ -39,33 +39,38 @@ export const AthletesGallery: React.FC = () => {
           СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
         </div>
         <div className="xl:pt-[24px] tablet:pt-[36px]">
-          <div className="flex">
-            <FilterButton
-              name={"Екзамен на пояс"}
-              onClick={() => setGalleryKey("exam")}
-              styleProp={"mb-3 mr-3"}
-              activeButton={galleryKey === "exam"}
-            />
-            <FilterButton
-              name={" Змагання"}
-              onClick={() => setGalleryKey("competition")}
-              styleProp={"mb-3 mr-3"}
-              activeButton={galleryKey === "competition"}
-            />
-          </div>
-          <div className="flex">
-            <FilterButton
-              name={"Літній табір"}
-              onClick={() => setGalleryKey("carpathian")}
-              styleProp={"mb-3 mr-3"}
-              activeButton={galleryKey === "carpathian"}
-            />
-            <FilterButton
-              name={"Тренування"}
-              onClick={() => setGalleryKey("training")}
-              styleProp={"mb-3 mr-3"}
-              activeButton={galleryKey === "training"}
-            />
+          <div className="flex gap-[23px]">
+            <p className="text-[14px] leading-none sm:hidden">Фільтр</p>
+            <div>
+              <div className="flex">
+                <FilterButton
+                  name={"Екзамен на пояс"}
+                  onClick={() => setGalleryKey("exam")}
+                  styleProp={"mb-3 mr-3"}
+                  activeButton={galleryKey === "exam"}
+                />
+                <FilterButton
+                  name={" Змагання"}
+                  onClick={() => setGalleryKey("competition")}
+                  styleProp={"mb-3 mr-3"}
+                  activeButton={galleryKey === "competition"}
+                />
+              </div>
+              <div className="flex">
+                <FilterButton
+                  name={"Літній табір"}
+                  onClick={() => setGalleryKey("carpathian")}
+                  styleProp={"mb-3 mr-3"}
+                  activeButton={galleryKey === "carpathian"}
+                />
+                <FilterButton
+                  name={"Тренування"}
+                  onClick={() => setGalleryKey("training")}
+                  styleProp={"mb-3 mr-3"}
+                  activeButton={galleryKey === "training"}
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex items-end sm:pb-6 xl-tablet:pb-[18px] sm:pt-7 xl-tablet:pt-[80px] leading-none">
