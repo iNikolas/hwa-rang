@@ -13,7 +13,7 @@ export default defineConfig({
       workbox: {
         clientsClaim: true,
         skipWaiting: true,
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg}"],
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,avif}"],
       },
       manifest: {
         name: "Тхеквондо Київ [HWA-RANG]",
