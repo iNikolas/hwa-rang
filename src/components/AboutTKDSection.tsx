@@ -3,6 +3,7 @@ import React from "react";
 import ReactPlayer from "react-player/youtube";
 
 const AboutTKDSection: React.FC = () => {
+  const [clicked, setClicked] = React.useState(false);
   return (
     <section className="sm:pt-[60px] tablet:pt-[120px] pt-[150px] sm:pb-[60px] tablet:pb-[120px] pb-[150px]">
       <div className="sm:px-5 tablet:px-[30px] pl-[85px] pr-[18px]">
@@ -27,12 +28,20 @@ const AboutTKDSection: React.FC = () => {
           </p>
         </div>
       </div>
-
-      <ReactPlayer
-        url="https://www.youtube.com/watch?v=u47tgx4lX98"
-        width={"100%"}
-        height={"576px"}
-      />
+      {/* url="https://www.youtube.com/watch?v=u47tgx4lX98" */}
+      <div
+        onClick={() => setClicked(true)}
+        className="h-[576px] bg-player-stub cursor-pointer bg-center lg:bg-cover bg-contain bg-no-repeat max-w-[1440px] mx-auto"
+      >
+        {clicked && (
+          <ReactPlayer
+            playing
+            url="https://www.youtube.com/watch?v=u47tgx4lX98"
+            width={"100%"}
+            height={"100%"}
+          />
+        )}
+      </div>
     </section>
   );
 };

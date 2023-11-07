@@ -4,7 +4,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -13,7 +12,9 @@ export default defineConfig({
       workbox: {
         clientsClaim: true,
         skipWaiting: true,
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,avif}"],
+        globPatterns: [
+          "**/*.{js,css,html,ico,png,svg,jpg,avif,webp,ttf,otf,woff2}",
+        ],
       },
       manifest: {
         name: "Тхеквондо Київ [HWA-RANG]",
@@ -44,6 +45,7 @@ export default defineConfig({
       shared: path.resolve(__dirname, "./src/shared"),
       utils: path.resolve(__dirname, "./src/shared/utils"),
       assets: path.resolve(__dirname, "./src/assets"),
+      components: path.resolve(__dirname, "./src/components"),
     },
   },
 });

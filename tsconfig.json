@@ -25,7 +25,8 @@
       "data/*": ["./data/*"],
       "shared/*": ["./shared/*"],
       "utils/*": ["shared/utils/*"],
-      "assets/*": ["assets/*"]
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"]
     }
   },
   "include": ["src"],
