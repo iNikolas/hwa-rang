@@ -25,7 +25,9 @@ export const HallsSection: React.FC = () => {
     return hallsData.map((h) => {
       return {
         place: h.name,
-        address: `${h.address.location} ${h.address.description ?? ""}`,
+        address: `${h.address.location}${
+          h.address.description ? ` (${h.address.description})` : ""
+        }`,
         coach: h.trainer,
         telephone: trainersData.find((t) => t.name === h.trainer)?.phone ?? "",
         group: h.schedule[0].description ?? "",
