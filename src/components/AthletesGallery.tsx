@@ -164,7 +164,7 @@ const AthletesGallery: React.FC = () => {
       )}
       <div className="sm:block flex justify-center pt-10 sm:pr-5">
         <a href="#form">
-          <SignUpButtonOutline className="sm:w-full sm:max-w-none" />
+          <SignUpButtonOutline className="sm:w-full sm:!max-w-none" />
         </a>
       </div>
     </section>

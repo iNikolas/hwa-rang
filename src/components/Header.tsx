@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
           підготовки
         </h3>
         <a href="#form" className="sm:pr-[20px] sm:block">
-          <SignUpButtonOutline className="w-full sm:max-w-[335px]" />
+          <SignUpButtonOutline className="w-full sm:!max-w-[335px]" />
         </a>
       </div>
       <div className="relative flex flex-col pt-[36px] w-2/5 md:hidden">
