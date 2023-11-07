@@ -2,7 +2,7 @@ import { Title } from "../shared/components/Title";
 import React from "react";
 import ReactPlayer from "react-player/youtube";
 
-export const AboutTKDSection: React.FC = () => {
+const AboutTKDSection: React.FC = () => {
   return (
     <section className="sm:pt-[60px] tablet:pt-[120px] pt-[150px] sm:pb-[60px] tablet:pb-[120px] pb-[150px]">
       <div className="sm:px-5 tablet:px-[30px] pl-[85px] pr-[18px]">
@@ -36,3 +36,5 @@ export const AboutTKDSection: React.FC = () => {
     </section>
   );
 };
+
+export default AboutTKDSection;

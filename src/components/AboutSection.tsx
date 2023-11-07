@@ -1,7 +1,7 @@
 import { Title } from "../shared/components/Title";
 import Marquee from "react-fast-marquee";
 
-export const AboutSection: React.FC = () => {
+const AboutSection: React.FC = () => {
   return (
     <>
       <section
@@ -101,3 +101,5 @@ export const AboutSection: React.FC = () => {
     </>
   );
 };
+
+export default AboutSection;

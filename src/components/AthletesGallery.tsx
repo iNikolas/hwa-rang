@@ -16,7 +16,7 @@ enum GalleryFilterCategory {
   Training = "training",
 }
 
-export const AthletesGallery: React.FC = () => {
+const AthletesGallery: React.FC = () => {
   const [galleryData, setGalleryData] = React.useState(images.examImages);
   const [galleryKey, setGalleryKey] = React.useState("exam");
 
@@ -160,3 +160,5 @@ export const AthletesGallery: React.FC = () => {
     </section>
   );
 };
+
+export default AthletesGallery;

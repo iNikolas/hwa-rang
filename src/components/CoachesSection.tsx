@@ -21,7 +21,7 @@ const Description: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
   );
 };
 
-export const CoachesSection: React.FC = () => {
+const CoachesSection: React.FC = () => {
   return (
     <section
       id="trainers"
@@ -97,3 +97,5 @@ export const CoachesSection: React.FC = () => {
     </section>
   );
 };
+
+export default CoachesSection;

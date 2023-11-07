@@ -36,7 +36,7 @@ const contacts: Contact[] = hallsData.map((h) => {
   };
 });
 
-export const HallsSection: React.FC = () => {
+const HallsSection: React.FC = () => {
   const { setValue } = useFormContext();
 
   const signUphandler = (value: string) => () => {
@@ -93,3 +93,5 @@ export const HallsSection: React.FC = () => {
     </section>
   );
 };
+
+export default HallsSection;

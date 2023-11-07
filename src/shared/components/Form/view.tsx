@@ -17,7 +17,7 @@ import {
 } from "./components";
 import { mapKeyToName } from "./utils";
 
-export const Form: React.FC<{
+const Form: React.FC<{
   methods: UseFormReturn<FormSchema>;
 }> = ({ methods }) => {
   const [loading, setLoading] = React.useState(false);
@@ -92,3 +92,5 @@ export const Form: React.FC<{
     </div>
   );
 };
+
+export default Form;

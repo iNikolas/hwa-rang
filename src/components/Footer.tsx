@@ -1,4 +1,4 @@
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="sm:px-5 tablet:px-[30px] px-[85px] pt-[50px] pb-4">
@@ -79,3 +79,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
+export default Footer;

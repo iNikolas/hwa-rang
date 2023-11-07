@@ -4,7 +4,7 @@ import advantages from "data/anvantages.json";
 
 import { Title } from "../shared/components/Title";
 
-export const AdvantageSection: React.FC = () => {
+const AdvantageSection: React.FC = () => {
   return (
     <section
       id="advantages"
@@ -35,3 +35,5 @@ export const AdvantageSection: React.FC = () => {
     </section>
   );
 };
+
+export default AdvantageSection;

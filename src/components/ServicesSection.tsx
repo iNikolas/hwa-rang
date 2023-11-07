@@ -11,7 +11,7 @@ import services from "data/services.json";
 
 import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
 
-export const ServicesSection: React.FC = () => {
+const ServicesSection: React.FC = () => {
   const { setValue } = useFormContext();
 
   return (
@@ -55,3 +55,5 @@ export const ServicesSection: React.FC = () => {
     </section>
   );
 };
+
+export default ServicesSection;

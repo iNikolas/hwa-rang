@@ -1,21 +1,34 @@
+import React from "react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { domAnimation, LazyMotion, domMax } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 
-import "./App.module.scss";
-import { AboutSection } from "./components/AboutSection";
-import { AboutTKDSection } from "./components/AboutTKDSection";
-import { AdvantageSection } from "./components/AdvantageSection";
-import { AthletesGallery } from "./components/AthletesGallery";
-import { CoachesSection } from "./components/CoachesSection";
-import { Footer } from "./components/Footer";
-import { HallsSection } from "./components/HallsSection";
-import { Header } from "./components/Header";
-import { ServicesSection } from "./components/ServicesSection";
-import { Form } from "./shared/components/Form";
-import { muiTheme } from "./theme";
+import { muiTheme } from "theme";
+import { Suspense } from "shared/components";
 import { FormSchema } from "shared/components/Form/types";
+
+import { Header } from "./components/Header";
+
+import "./App.module.scss";
+
+const AboutSection = React.lazy(() => import("./components/AboutSection"));
+const AboutTKDSection = React.lazy(
+  () => import("./components/AboutTKDSection")
+);
+const AdvantageSection = React.lazy(
+  () => import("./components/AdvantageSection")
+);
+const AthletesGallery = React.lazy(
+  () => import("./components/AthletesGallery")
+);
+const CoachesSection = React.lazy(() => import("./components/CoachesSection"));
+const Footer = React.lazy(() => import("./components/Footer"));
+const HallsSection = React.lazy(() => import("./components/HallsSection"));
+const ServicesSection = React.lazy(
+  () => import("./components/ServicesSection")
+);
+const Form = React.lazy(() => import("./shared/components/Form"));
 
 function App() {
   const methods = useForm<FormSchema>({
@@ -40,15 +53,33 @@ function App() {
           <FormProvider {...methods}>
             <CssBaseline />
             <Header />
-            <AboutSection />
-            <AthletesGallery />
-            <AboutTKDSection />
-            <AdvantageSection />
-            <CoachesSection />
-            <ServicesSection />
-            <HallsSection />
-            <Form methods={methods} />
-            <Footer />
+            <Suspense>
+              <AboutSection />
+            </Suspense>
+            <Suspense>
+              <AthletesGallery />
+            </Suspense>
+            <Suspense>
+              <AboutTKDSection />
+            </Suspense>
+            <Suspense>
+              <AdvantageSection />
+            </Suspense>
+            <Suspense>
+              <CoachesSection />
+            </Suspense>
+            <Suspense>
+              <ServicesSection />
+            </Suspense>
+            <Suspense>
+              <HallsSection />
+            </Suspense>
+            <Suspense>
+              <Form methods={methods} />
+            </Suspense>
+            <Suspense>
+              <Footer />
+            </Suspense>
           </FormProvider>
           <ToastContainer />
         </ThemeProvider>
