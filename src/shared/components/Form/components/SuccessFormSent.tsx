@@ -36,7 +36,7 @@ export function SuccessFormSent({
         </div>
         <SignUpButton
           onClick={onClose}
-          className="whitespace-nowrap min-w-max sm:!text-14 !text-20"
+          className="whitespace-nowrap !min-w-max sm:!text-14 !text-20"
         >
           Повернутись до головної сторінки
         </SignUpButton>
