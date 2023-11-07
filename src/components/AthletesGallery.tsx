@@ -8,6 +8,7 @@ import images from "data/galleryImages.json";
 
 import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
 import { FilterButton } from "../shared/components/btns/FilterButton";
+import { useInView } from "framer-motion";
 
 enum GalleryFilterCategory {
   Exam = "exam",
@@ -19,6 +20,10 @@ enum GalleryFilterCategory {
 const AthletesGallery: React.FC = () => {
   const [galleryData, setGalleryData] = React.useState(images.examImages);
   const [galleryKey, setGalleryKey] = React.useState("exam");
+
+  const swiperRef = React.useRef<HTMLElement>(null);
+
+  const inView = useInView(swiperRef, { once: true });
 
   React.useEffect(() => {
     if (galleryKey === GalleryFilterCategory.Carpathian) {
@@ -33,7 +38,10 @@ const AthletesGallery: React.FC = () => {
   }, [galleryKey]);
 
   return (
-    <section className="sm:pl-[20px] tablet:pl-[30px] pl-[85px] lg:py-[60px] py-[75px] bg-background">
+    <section
+      ref={swiperRef}
+      className="sm:pl-[20px] tablet:pl-[30px] pl-[85px] lg:py-[60px] py-[75px] bg-background"
+    >
       <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
         <div className="max-w-[597px] sm:text-[20px] text-[36px] sm:leading-[26px] leading-[46.8px] sm:font-semibold font-bold">
           СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
@@ -119,39 +127,41 @@ const AthletesGallery: React.FC = () => {
         </div>
       </div>
 
-      <Swiper
-        navigation={{
-          nextEl: ".custom-swiper-button-next",
-          prevEl: ".custom-swiper-button-prev",
-        }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Navigation, FreeMode, Autoplay]}
-        slidesPerView="auto"
-        spaceBetween={13}
-        breakpoints={{
-          639: {
-            spaceBetween: 21,
-          },
-          1023: {
-            spaceBetween: 24,
-          },
-        }}
-        freeMode={true}
-        className="mySwiper"
-      >
-        {galleryData.map(({ folder, photo }) => (
-          <SwiperSlide className="!w-fit" key={photo}>
-            <img
-              className="sm:max-h-[174px] tablet:max-h-[288px] max-h-[456px]"
-              src={`/images/${folder}/${photo}.jpg`}
-              alt={photo}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {inView && (
+        <Swiper
+          navigation={{
+            nextEl: ".custom-swiper-button-next",
+            prevEl: ".custom-swiper-button-prev",
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Navigation, FreeMode, Autoplay]}
+          slidesPerView="auto"
+          spaceBetween={13}
+          breakpoints={{
+            639: {
+              spaceBetween: 21,
+            },
+            1023: {
+              spaceBetween: 24,
+            },
+          }}
+          freeMode={true}
+          className="mySwiper"
+        >
+          {galleryData.map(({ folder, photo }) => (
+            <SwiperSlide className="!w-fit" key={photo}>
+              <img
+                className="sm:max-h-[174px] tablet:max-h-[288px] max-h-[456px]"
+                src={`/images/${folder}/${photo}.jpg`}
+                alt={photo}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
       <div className="sm:block flex justify-center pt-10 sm:pr-5">
         <a href="#form">
           <SignUpButtonOutline className="sm:w-full sm:max-w-[initial]" />
