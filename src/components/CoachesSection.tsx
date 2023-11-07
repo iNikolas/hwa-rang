@@ -71,7 +71,7 @@ export const CoachesSection: React.FC = () => {
               </p>
               <div className="tablet:flex tablet:gap-x-[43px] tablet:justify-between tablet:w-full">
                 <div>
-                  <Description>освіта</Description>
+                  <Description className="sm:pt-6">освіта</Description>
                   <p className="pb-[14px]">{coach.education.institution}</p>
                   <p>{coach.education.title}</p>
                 </div>
