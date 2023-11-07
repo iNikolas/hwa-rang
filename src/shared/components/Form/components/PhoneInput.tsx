@@ -7,13 +7,10 @@ import { Controller, useFormContext } from "react-hook-form";
 import { cn } from "../../../utils";
 import { CustomPhoneInput } from "./CustomPhoneNumber";
 
-export const PhoneInput: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
-  className,
-  ...divProps
-}) => {
-  const { watch, control } = useFormContext();
-
-  const show = !!watch("howToConnect").length;
+export const PhoneInput: React.FC<
+  React.HTMLAttributes<HTMLDivElement> & { name: string; show: boolean }
+> = ({ className, name, show, children = "номер", ...divProps }) => {
+  const { control } = useFormContext();
 
   return (
     <div
@@ -24,22 +21,24 @@ export const PhoneInput: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
       }}
       {...divProps}
     >
-      <span className="block text-custom-black">Введіть ваш номер</span>
+      <span className="block text-custom-black">Введіть ваш {children}</span>
       <Controller
-        name="phone"
+        name={name}
         control={control}
         rules={{
-          required: true,
-          validate: (value) => isValidPhoneNumber(value),
+          validate: (value) => !show || (show && isValidPhoneNumber(value)),
         }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <ReactPhoneInput
-            inputComponent={CustomPhoneInput}
-            value={value}
-            onChange={onChange}
-            onBlur={onBlur}
-          />
-        )}
+        render={({ field: { onChange, onBlur, value } }) => {
+          return (
+            <ReactPhoneInput
+              inputComponent={CustomPhoneInput}
+              name={name}
+              value={value}
+              onChange={onChange}
+              onBlur={onBlur}
+            />
+          );
+        }}
       />
     </div>
   );

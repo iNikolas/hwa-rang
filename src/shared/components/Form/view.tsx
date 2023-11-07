@@ -2,8 +2,6 @@ import React from "react";
 import { UseFormReturn } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import formAPI from "data/form.json";
-
 import { GradientText } from "../GradientText";
 import { FormSchema } from "./types";
 import {
@@ -15,8 +13,9 @@ import {
   AgeInput,
   HowToConnect,
   LocationInfo,
+  SuccessFormSent,
 } from "./components";
-import { SuccessFormSent } from "./components/SuccessFormSent";
+import { mapKeyToName } from "./utils";
 
 export const Form: React.FC<{
   methods: UseFormReturn<FormSchema>;
@@ -32,18 +31,20 @@ export const Form: React.FC<{
     const formData = new URLSearchParams();
 
     Object.entries(rawData).forEach(([key, value]) => {
+      const name = mapKeyToName(key);
+
       if (Array.isArray(value)) {
-        return formData.append(key, value.join(", "));
+        return formData.append(name, value.join(", "));
       }
-      formData.append(key, value);
+      formData.append(name, value);
     });
 
     try {
       setLoading(true);
-      await fetch(formAPI.action, {
+      await fetch(import.meta.env.VITE_FORM_ACTION, {
         method: "POST",
         body: formData,
-        headers: { "Content-Type": formAPI["content-type"] },
+        headers: { "Content-Type": import.meta.env.VITE_FORM_CONTENT_TYPE },
       });
       setSubmitted(true);
     } catch (e) {

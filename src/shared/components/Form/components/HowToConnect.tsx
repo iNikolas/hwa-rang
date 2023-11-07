@@ -55,7 +55,7 @@ export function HowToConnect() {
                 }
                 label={connections.mobile}
               />
-              {!gtSmLtLg && <PhoneInput />}
+              {!gtSmLtLg && <PhoneInput name="phone" show={mobile} />}
               <FormControlLabel
                 error={!!error}
                 control={
@@ -72,6 +72,7 @@ export function HowToConnect() {
                 }
                 label={connections.viber}
               />
+              {!gtSmLtLg && <PhoneInput name="viber" show={viber} />}
               <FormControlLabel
                 error={!!error}
                 control={
@@ -91,7 +92,20 @@ export function HowToConnect() {
                 label={connections.telegram}
               />
             </div>
-            {gtSmLtLg && <PhoneInput />}
+            {gtSmLtLg && (
+              <div>
+                <PhoneInput name="phone" show={mobile}>
+                  {connections.mobile}
+                </PhoneInput>
+                <PhoneInput className="mt-2" name="viber" show={viber}>
+                  {connections.viber}
+                </PhoneInput>
+                <PhoneInput className="mt-2" name="telegram" show={telegram}>
+                  {connections.telegram}
+                </PhoneInput>
+              </div>
+            )}
+            {!gtSmLtLg && <PhoneInput name="telegram" show={telegram} />}
           </FormGroup>
         );
       }}

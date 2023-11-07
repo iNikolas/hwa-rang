@@ -8,3 +8,4 @@ export * from "./ForInput";
 export * from "./AgeInput";
 export * from "./HowToConnect";
 export * from "./LocationInfo";
+export * from "./SuccessFormSent";

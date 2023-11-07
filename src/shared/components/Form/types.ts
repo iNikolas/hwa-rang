@@ -6,4 +6,6 @@ export type FormSchema = {
   age: string;
   howToConnect: string[];
   phone: string;
+  viber: string;
+  telegram: string;
 };

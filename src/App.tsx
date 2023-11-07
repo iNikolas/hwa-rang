@@ -23,6 +23,8 @@ function App() {
     defaultValues: {
       name: "",
       phone: "",
+      viber: "",
+      telegram: "",
       service: "none",
       hall: "none",
       for: "",
