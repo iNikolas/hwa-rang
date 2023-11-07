@@ -1,5 +1,8 @@
 import { Select } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
+
+import services from "data/services.json";
+
 import { Label } from "./Label";
 import { MenuItem } from "./MenuItem";
 import { FormControl } from "./FormControl";
@@ -18,11 +21,11 @@ export function ServiceInput() {
             <MenuItem sx={{ display: "none" }} value="none">
               Оберіть послугу
             </MenuItem>
-            <MenuItem value={"Групові тренування"}>Групові тренування</MenuItem>
-            <MenuItem value={"Персональні тренування"}>
-              Персональні тренування
-            </MenuItem>
-            <MenuItem value="Он-лайн тренування">Он-лайн тренування</MenuItem>
+            {services.map(({ title }) => (
+              <MenuItem key={title} value={title}>
+                {title}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
       )}

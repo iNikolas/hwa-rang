@@ -1,29 +1,10 @@
-// import { Card } from "../shared/components/Card";
-import { Title } from "../shared/components/Title";
 import { Card, CardHeader, CardBody } from "@material-tailwind/react";
 
-export const AdvantageSection: React.FC = () => {
-  const advantage = [
-    {
-      title: "Офіційна сертифікація на пояси",
-      img: "../images/advantage/advantage1.jpg",
-      desc: `Офіційна сертифікація на пояси в тхеквондо є важливим
-            етапом в розвитку спортсменів і підтверджує їхні
-            досягнення та вміння в цьому бойовому мистецтві.`,
-    },
-    {
-      title: "Участь у державних та міжнародних змаганнях",
-      img: "../images/advantage/advantage2.jpg",
-      desc: `Активна участь у державних та міжнародних змаганнях - ключовий шлях для спортсменів у тхеквондо до досягнення високого рівня 
-            і визнання.`,
-    },
-    {
-      title: "Щорічні  збори спортсменів в Карпатах",
-      img: "../images/advantage/advantage3.jpg",
-      desc: `Спортсмени розвивають свої фізичні здібності, навчаються спортивній дисципліні та будують дружні стосунки в прекрасному гірському середовищі.`,
-    },
-  ];
+import advantages from "data/anvantages.json";
 
+import { Title } from "../shared/components/Title";
+
+export const AdvantageSection: React.FC = () => {
   return (
     <section
       id="advantages"
@@ -31,7 +12,7 @@ export const AdvantageSection: React.FC = () => {
     >
       <Title title={"НАШІ ПЕРЕВАГИ"} style="max-w-[700px]" />
       <div className="flex md:flex-col gap-x-5 lg:gap-y-[60px] xs:pt-6 tablet:pt-[60px] pt-[30px] justify-between">
-        {advantage.map(({ title, img, desc }, index) => (
+        {advantages.map(({ title, img, desc }, index) => (
           <Card className="w-[430px] md:w-full" key={index}>
             <CardHeader color="blue-gray">
               <img src={img} alt="card-image" className="h-full w-full" />

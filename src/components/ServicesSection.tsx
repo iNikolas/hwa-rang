@@ -7,27 +7,9 @@ import {
   CardFooter,
 } from "@material-tailwind/react";
 
-import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
+import services from "data/services.json";
 
-const advantage = [
-  {
-    title: "Групові тренування",
-    img: "../images/services/group.png",
-    desc: `Офіційна сертифікація на пояси в тхеквондо є важливим
-            етапом в розвитку спортсменів і підтверджує їхні
-            досягнення та вміння в цьому бойовому мистецтві.`,
-  },
-  {
-    title: "Персональні тренування",
-    img: "../images/services/personal.png",
-    desc: `Обирайте персональні тренування щоб максимально швидко вивчити техніку, покращити фізичну форму та досягти поставленої мети. `,
-  },
-  {
-    title: "Он-лайн тренування",
-    img: "../images/services/online.png",
-    desc: `Оберіть он-лайн тренування. Економте свій час тренуючись вдома, або в будь якому зручному для вас місці.`,
-  },
-];
+import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
 
 export const ServicesSection: React.FC = () => {
   const { setValue } = useFormContext();
@@ -39,7 +21,7 @@ export const ServicesSection: React.FC = () => {
     >
       <Title title={"НАШІ ПОСЛУГИ"} />
       <div className="flex gap-x-[20px] gap-y-[60px] md:flex-col pt-[30px] tablet:pt-[60px] justify-between">
-        {advantage.map(({ title, img, desc }, index) => (
+        {services.map(({ title, img, desc }, index) => (
           <Card className="w-[430px] md:w-full justify-between" key={index}>
             <div>
               <CardHeader color="blue-gray" className="relative h-65">

@@ -20,25 +20,23 @@ type Contact = {
   desc: string;
 };
 
-export const HallsSection: React.FC = () => {
-  const contacts: Contact[] = React.useMemo(() => {
-    return hallsData.map((h) => {
-      return {
-        place: h.name,
-        address: `${h.address.location}${
-          h.address.description ? ` (${h.address.description})` : ""
-        }`,
-        coach: h.trainer,
-        telephone: trainersData.find((t) => t.name === h.trainer)?.phone ?? "",
-        group: h.schedule[0].description ?? "",
-        schedule: h.schedule[0].time ?? "",
-        desc:
-          (h.schedule[1]?.description ? h.schedule[1].description + " " : "") +
-          (h.schedule[1]?.time ? h.schedule[1].time : ""),
-      };
-    });
-  }, []);
+const contacts: Contact[] = hallsData.map((h) => {
+  return {
+    place: h.name,
+    address: `${h.address.location}${
+      h.address.description ? ` (${h.address.description})` : ""
+    }`,
+    coach: h.trainer,
+    telephone: trainersData.find((t) => t.name === h.trainer)?.phone ?? "",
+    group: h.schedule[0].description ?? "",
+    schedule: h.schedule[0].time ?? "",
+    desc:
+      (h.schedule[1]?.description ? h.schedule[1].description + " " : "") +
+      (h.schedule[1]?.time ? h.schedule[1].time : ""),
+  };
+});
 
+export const HallsSection: React.FC = () => {
   const { setValue } = useFormContext();
 
   const signUphandler = (value: string) => () => {
@@ -80,7 +78,6 @@ export const HallsSection: React.FC = () => {
         <Marquee>
           <span
             style={{
-              // WebkitTextStroke: "1px #b3adad",
               color: "transparent",
               background:
                 "linear-gradient(90deg, rgba(186, 46, 48, 0.9) 2.82%, rgba(88, 29, 96, 0.9) 52%, rgba(248, 82, 83, 0.9) 104.36%)",
