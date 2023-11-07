@@ -62,6 +62,7 @@ export const ServicesSection: React.FC = () => {
             <CardFooter className="pt-0 mb-0">
               <a href="#form">
                 <SignUpButtonOutline
+                  className="sm:w-full sm:max-w-[initial]"
                   onClick={() => setValue("service", title)}
                 />
               </a>

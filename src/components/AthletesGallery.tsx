@@ -152,9 +152,9 @@ export const AthletesGallery: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-center pt-10">
+      <div className="sm:block flex justify-center pt-10 sm:pr-5">
         <a href="#form">
-          <SignUpButtonOutline />
+          <SignUpButtonOutline className="sm:w-full sm:max-w-[initial]" />
         </a>
       </div>
     </section>
