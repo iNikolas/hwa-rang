@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
       <div className="absolute lg:flex hidden flex-row-reverse top-[32px] right-0 z-10">
         <MenuMobile />
       </div>
-      <div className="relative flex justify-end md:h-full pt-[36px] bg-[url('/src/assets/banner.avif'),url('/src/assets/banner.jpg')] xs:bg-[url('/src/assets/banner-mobile.avif'),url('/src/assets/banner-mobile.jpg')] bg-cover w-3/5 md:w-full lg:bg-center">
+      <div className="relative flex justify-end md:h-full pt-[36px] bg-[url('/src/assets/banner.webp')] xs:bg-[url('/src/assets/banner-mobile.webp')] bg-cover w-3/5 md:w-full lg:bg-center">
         <nav className="lg:hidden">
           <ul className="flex justify-between pr-2 mt-[5px] text-14 xl:text-12">
             <li className="pl-[35px] xl:pl-[15px] text-white font-medium">

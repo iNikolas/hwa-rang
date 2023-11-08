@@ -19,32 +19,38 @@
   font-weight: 500;
   src: url("/fonts/pp-neue-montreal/ppneuemontreal-medium.otf")
     format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: PP Neue Montreal;
   font-weight: 700;
   src: url("/fonts/pp-neue-montreal/ppneuemontreal-bold.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Black.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "PP Monument Extended";
-  src: url("/fonts/MonumentExtended-Black.ttf");
+  src: url("/fonts/MonumentExtended-Black.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "MontserratBlack";
-  src: url("/fonts/Montserrat-Black.ttf");
+  src: url("/fonts/Montserrat-Black.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "MontserratBold";
-  src: url("/fonts/Montserrat-ExtraBold.ttf");
+  src: url("/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-display: swap;
 }
 
 :root {

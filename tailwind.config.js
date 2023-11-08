@@ -33,8 +33,7 @@ export default {
           "linear-gradient(45deg,rgba(6, 19, 44, 1),rgba(107, 44, 104, 1),rgba(222, 75, 87, 1))",
         taekwondo: "url(/images/taekwondo.webp)",
         "kyiv-kyiv": "url(/kyiv-kyiv.webp)",
-        "player-stub":
-          "url(/images/player-facade.avif),url(/images/player-facade.jpg)",
+        "player-stub": "url(/images/player-facade.webp)",
       },
       colors: {
         secondary: "#0D0D0D99",
