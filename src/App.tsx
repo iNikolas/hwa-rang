@@ -89,14 +89,18 @@ function App() {
                 <Suspense>
                   <HallsSection />
                 </Suspense>
-                <Suspense>
-                  <Form methods={methods} />
-                </Suspense>
+              </>
+            )}
+            <>
+              <Suspense>
+                <Form methods={methods} />
+              </Suspense>
+              {scrolled && (
                 <Suspense>
                   <Footer />
                 </Suspense>
-              </>
-            )}
+              )}
+            </>
           </FormProvider>
           <ToastContainer />
         </ThemeProvider>
