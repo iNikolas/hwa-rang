@@ -1,6 +1,5 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
-import { toast } from "react-toastify";
 
 import { GradientText } from "../GradientText";
 import { FormSchema } from "./types";
@@ -15,7 +14,8 @@ import {
   LocationInfo,
   SuccessFormSent,
 } from "./components";
-import { mapKeyToName } from "./utils";
+import { showToastError } from "./utils";
+import { sendForm } from "./services";
 
 const Form: React.FC<{
   methods: UseFormReturn<FormSchema>;
@@ -28,32 +28,14 @@ const Form: React.FC<{
       return;
     }
 
-    const formData = new URLSearchParams();
-
-    Object.entries(rawData).forEach(([key, value]) => {
-      const name = mapKeyToName(key);
-
-      if (Array.isArray(value)) {
-        return formData.append(name, value.join(", "));
-      }
-      formData.append(name, value);
-    });
-
     try {
       setLoading(true);
-      await fetch(import.meta.env.VITE_FORM_ACTION, {
-        method: "POST",
-        body: formData,
-        headers: { "Content-Type": import.meta.env.VITE_FORM_CONTENT_TYPE },
-      });
+
+      await sendForm(rawData);
+
       setSubmitted(true);
     } catch (e) {
-      if (e instanceof Error) {
-        toast(`Не вдалося надіслати форму: ${e.message}`, {
-          position: "bottom-center",
-          type: "error",
-        });
-      }
+      showToastError(e);
     } finally {
       setLoading(false);
     }

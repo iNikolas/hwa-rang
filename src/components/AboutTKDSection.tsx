@@ -31,7 +31,7 @@ const AboutTKDSection: React.FC = () => {
       {/* url="https://www.youtube.com/watch?v=u47tgx4lX98" */}
       <div
         onClick={() => setClicked(true)}
-        className="h-[576px] bg-player-stub cursor-pointer bg-center lg:bg-cover bg-contain bg-no-repeat max-w-[1440px] mx-auto"
+        className="h-[576px] bg-player-stub cursor-pointer bg-center bg-cover bg-no-repeat max-w-[1440px] mx-auto"
       >
         {clicked && (
           <ReactPlayer
