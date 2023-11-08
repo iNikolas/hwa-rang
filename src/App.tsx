@@ -31,7 +31,6 @@ const ServicesSection = React.lazy(
 const Form = React.lazy(() => import("./shared/components/Form"));
 
 function App() {
-  const [scrolled, setScrolled] = React.useState(false);
   const methods = useForm<FormSchema>({
     mode: "onBlur",
     defaultValues: {
@@ -47,18 +46,6 @@ function App() {
     },
   });
 
-  React.useEffect(() => {
-    const handler = () => {
-      setScrolled(true);
-    };
-
-    window.addEventListener("scroll", handler);
-
-    return () => {
-      window.removeEventListener("scroll", handler);
-    };
-  }, []);
-
   return (
     <LazyMotion features={domAnimation}>
       <LazyMotion features={domMax}>
@@ -69,38 +56,30 @@ function App() {
             <Suspense>
               <AboutSection />
             </Suspense>
-            {scrolled && (
-              <>
-                <Suspense>
-                  <AthletesGallery />
-                </Suspense>
-                <Suspense>
-                  <AboutTKDSection />
-                </Suspense>
-                <Suspense>
-                  <AdvantageSection />
-                </Suspense>
-                <Suspense>
-                  <CoachesSection />
-                </Suspense>
-                <Suspense>
-                  <ServicesSection />
-                </Suspense>
-                <Suspense>
-                  <HallsSection />
-                </Suspense>
-              </>
-            )}
-            <>
-              <Suspense>
-                <Form methods={methods} />
-              </Suspense>
-              {scrolled && (
-                <Suspense>
-                  <Footer />
-                </Suspense>
-              )}
-            </>
+            <Suspense>
+              <AthletesGallery />
+            </Suspense>
+            <Suspense>
+              <AboutTKDSection />
+            </Suspense>
+            <Suspense>
+              <AdvantageSection />
+            </Suspense>
+            <Suspense>
+              <CoachesSection />
+            </Suspense>
+            <Suspense>
+              <ServicesSection />
+            </Suspense>
+            <Suspense>
+              <HallsSection />
+            </Suspense>
+            <Suspense>
+              <Form methods={methods} />
+            </Suspense>
+            <Suspense>
+              <Footer />
+            </Suspense>
           </FormProvider>
           <ToastContainer />
         </ThemeProvider>
