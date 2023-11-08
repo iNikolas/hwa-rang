@@ -31,6 +31,8 @@ const ServicesSection = React.lazy(
 const Form = React.lazy(() => import("./shared/components/Form"));
 
 function App() {
+  const [hash, setHash] = React.useState("");
+  const [scrolled, setScrolled] = React.useState(false);
   const methods = useForm<FormSchema>({
     mode: "onBlur",
     defaultValues: {
@@ -46,40 +48,97 @@ function App() {
     },
   });
 
+  React.useEffect(() => {
+    const scrollHandler = () => setScrolled(true);
+
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    const handler = () => {
+      const element = document.querySelector(hash);
+
+      if (!hash) {
+        return;
+      }
+
+      if (element) {
+        element.scrollIntoView();
+        setHash("");
+        return;
+      }
+
+      window.requestAnimationFrame(handler);
+    };
+
+    if (hash) {
+      window.requestAnimationFrame(handler);
+    }
+  }, [hash]);
+
   return (
     <LazyMotion features={domAnimation}>
       <LazyMotion features={domMax}>
         <ThemeProvider theme={muiTheme}>
           <FormProvider {...methods}>
             <CssBaseline />
-            <Header />
-            <Suspense>
-              <AboutSection />
-            </Suspense>
-            <Suspense>
-              <AthletesGallery />
-            </Suspense>
-            <Suspense>
-              <AboutTKDSection />
-            </Suspense>
-            <Suspense>
-              <AdvantageSection />
-            </Suspense>
-            <Suspense>
-              <CoachesSection />
-            </Suspense>
-            <Suspense>
-              <ServicesSection />
-            </Suspense>
-            <Suspense>
-              <HallsSection />
-            </Suspense>
-            <Suspense>
-              <Form methods={methods} />
-            </Suspense>
-            <Suspense>
-              <Footer />
-            </Suspense>
+            <div
+              onClick={(e) => {
+                let hash = "";
+                const target = e.target;
+                if (target instanceof HTMLAnchorElement) {
+                  setScrolled(true);
+                  hash = new URL(target.href).hash;
+                }
+                if (target instanceof HTMLButtonElement) {
+                  setScrolled(true);
+                  const link = target.closest("a");
+                  hash = new URL(link?.href ?? "").hash;
+                }
+
+                if (hash) {
+                  document.querySelector(hash) ? null : setHash(hash);
+                }
+              }}
+            >
+              <Header />
+            </div>
+            {scrolled && (
+              <>
+                <Suspense>
+                  <AboutSection />
+                </Suspense>
+                <Suspense>
+                  <AthletesGallery />
+                </Suspense>
+                <Suspense>
+                  <AboutTKDSection />
+                </Suspense>
+                <Suspense>
+                  <AdvantageSection />
+                </Suspense>
+                <Suspense>
+                  <CoachesSection />
+                </Suspense>
+                <Suspense>
+                  <ServicesSection />
+                </Suspense>
+                <Suspense>
+                  <HallsSection />
+                </Suspense>
+                <Suspense>
+                  <Form methods={methods} />
+                </Suspense>
+                <Suspense>
+                  <Footer />
+                </Suspense>
+              </>
+            )}
+            {!scrolled && <div className="min-h-screen" />}
           </FormProvider>
           <ToastContainer />
         </ThemeProvider>
