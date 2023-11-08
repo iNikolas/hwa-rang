@@ -69,7 +69,7 @@ function App() {
       const element = document.querySelector(hashRef.current);
 
       if (element) {
-        setTimeout(() => element.scrollIntoView(), 1000);
+        element.scrollIntoView();
         hashRef.current = "";
         return;
       }
@@ -115,39 +115,21 @@ function App() {
               <Header />
             </div>
             {scrolled && (
-              <>
-                <Suspense>
-                  <AboutSection />
-                </Suspense>
-                <Suspense>
-                  <AthletesGallery />
-                </Suspense>
-                <Suspense>
-                  <AboutTKDSection />
-                </Suspense>
-                <Suspense>
-                  <AdvantageSection />
-                </Suspense>
-                <Suspense>
-                  <CoachesSection />
-                </Suspense>
-                <Suspense>
-                  <ServicesSection />
-                </Suspense>
-                <Suspense>
-                  <HallsSection />
-                </Suspense>
-                <Suspense>
-                  <Form methods={methods} />
-                </Suspense>
-                <Suspense>
-                  <Footer />
-                </Suspense>
-              </>
+              <Suspense>
+                <AboutSection />
+                <AthletesGallery />
+                <AboutTKDSection />
+                <AdvantageSection />
+                <CoachesSection />
+                <ServicesSection />
+                <HallsSection />
+                <Form methods={methods} />
+                <Footer />
+                <ToastContainer />
+              </Suspense>
             )}
             {!scrolled && <div className="min-h-screen" />}
           </FormProvider>
-          <ToastContainer />
         </ThemeProvider>
       </LazyMotion>
     </LazyMotion>
