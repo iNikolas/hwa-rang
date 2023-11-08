@@ -31,7 +31,7 @@ const ServicesSection = React.lazy(
 const Form = React.lazy(() => import("./shared/components/Form"));
 
 function App() {
-  const [hash, setHash] = React.useState("");
+  const hashRef = React.useRef("");
   const [scrolled, setScrolled] = React.useState(false);
   const methods = useForm<FormSchema>({
     mode: "onBlur",
@@ -51,34 +51,36 @@ function App() {
   React.useEffect(() => {
     const scrollHandler = () => setScrolled(true);
 
-    window.addEventListener("scroll", scrollHandler);
+    if (!scrolled) {
+      window.addEventListener("scroll", scrollHandler);
+    }
 
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, []);
+  }, [scrolled]);
 
   React.useEffect(() => {
     const handler = () => {
-      const element = document.querySelector(hash);
-
-      if (!hash) {
+      if (!hashRef.current) {
         return;
       }
 
+      const element = document.querySelector(hashRef.current);
+
       if (element) {
-        element.scrollIntoView();
-        setHash("");
+        setTimeout(() => element.scrollIntoView(), 1000);
+        hashRef.current = "";
         return;
       }
 
       window.requestAnimationFrame(handler);
     };
 
-    if (hash) {
+    if (scrolled && hashRef.current) {
       window.requestAnimationFrame(handler);
     }
-  }, [hash]);
+  }, [scrolled]);
 
   return (
     <LazyMotion features={domAnimation}>
@@ -88,20 +90,25 @@ function App() {
             <CssBaseline />
             <div
               onClick={(e) => {
+                if (scrolled) {
+                  return;
+                }
+
                 let hash = "";
                 const target = e.target;
                 if (target instanceof HTMLAnchorElement) {
-                  setScrolled(true);
                   hash = new URL(target.href).hash;
                 }
                 if (target instanceof HTMLButtonElement) {
-                  setScrolled(true);
                   const link = target.closest("a");
                   hash = new URL(link?.href ?? "").hash;
                 }
 
-                if (hash) {
-                  document.querySelector(hash) ? null : setHash(hash);
+                if (hash && !scrolled) {
+                  setScrolled(true);
+                  document.querySelector(hash)
+                    ? null
+                    : (hashRef.current = hash);
                 }
               }}
             >
