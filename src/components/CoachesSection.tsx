@@ -39,11 +39,14 @@ const CoachesSection: React.FC = () => {
             floated={false}
             className="m-0 w-2/5 lg:w-full shrink-0 rounded-r-none"
           >
-            <img
-              src={coach.photo}
-              alt={coach.name}
-              className="h-full w-full object-cover"
-            />
+            <picture>
+              <source type="image/avif" srcSet={coach.photo + ".avif"} />
+              <img
+                src={coach.photo + ".jpg"}
+                alt={coach.name}
+                className="h-full w-full object-cover"
+              />
+            </picture>
           </CardHeader>
         );
 

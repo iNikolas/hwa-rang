@@ -15,7 +15,14 @@ const AdvantageSection: React.FC = () => {
         {advantages.map(({ title, img, desc }, index) => (
           <Card className="w-[430px] md:w-full" key={index}>
             <CardHeader color="blue-gray">
-              <img src={img} alt="card-image" className="h-full w-full" />
+              <picture>
+                <source type="image/avif" srcSet={img + ".avif"} />
+                <img
+                  src={img + ".jpg"}
+                  alt="card-image"
+                  className="h-full w-full"
+                />
+              </picture>
             </CardHeader>
             <CardBody>
               <p

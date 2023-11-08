@@ -15,11 +15,14 @@ export function TrainerProfile({ trainer }: { trainer: string }) {
     <div className="p-[55px] text-white">
       <div className="flex gap-6 flex-wrap">
         <div className="min-h-[192px] flex items-center">
-          <img
-            className="w-[173px]"
-            src={trainerData?.photo}
-            alt="trainer photo"
-          />
+          <picture>
+            <source type="image/avif" srcSet={trainerData?.photo + ".avif"} />
+            <img
+              className="w-[173px]"
+              src={trainerData?.photo + ".jpg"}
+              alt="trainer photo"
+            />
+          </picture>
         </div>
         <div className="flex flex-col justify-between">
           <div>

@@ -25,7 +25,14 @@ const ServicesSection: React.FC = () => {
           <Card className="w-[430px] md:w-full justify-between" key={index}>
             <div>
               <CardHeader color="blue-gray" className="relative h-65">
-                <img src={img} alt="card-image" className="h-full w-full" />
+                <picture>
+                  <source type="image/avif" srcSet={img + ".avif"} />
+                  <img
+                    src={img + ".jpg"}
+                    alt="card-image"
+                    className="h-full w-full"
+                  />
+                </picture>
               </CardHeader>
               <CardBody>
                 <p
