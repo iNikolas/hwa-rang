@@ -23,7 +23,7 @@ export function AgeInput() {
             fullWidth
             value={value}
             onChange={(event) =>
-              onChange(event.target.value.replace(/\D/g, ""))
+              onChange(event.target.value.replace(/\D/g, "").slice(0, 2))
             }
             onBlur={onBlur}
             id="age"
