@@ -31,8 +31,6 @@ const ServicesSection = React.lazy(
 const Form = React.lazy(() => import("./shared/components/Form"));
 
 function App() {
-  const hashRef = React.useRef("");
-  const [scrolled, setScrolled] = React.useState(false);
   const methods = useForm<FormSchema>({
     mode: "onBlur",
     defaultValues: {
@@ -48,87 +46,41 @@ function App() {
     },
   });
 
-  React.useEffect(() => {
-    const scrollHandler = () => setScrolled(true);
-
-    if (!scrolled) {
-      window.addEventListener("scroll", scrollHandler);
-    }
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
-  }, [scrolled]);
-
-  React.useEffect(() => {
-    const handler = () => {
-      if (!hashRef.current) {
-        return;
-      }
-
-      const element = document.querySelector(hashRef.current);
-
-      if (element) {
-        element.scrollIntoView();
-        hashRef.current = "";
-        return;
-      }
-
-      window.requestAnimationFrame(handler);
-    };
-
-    if (scrolled && hashRef.current) {
-      window.requestAnimationFrame(handler);
-    }
-  }, [scrolled]);
-
   return (
     <LazyMotion features={domAnimation}>
       <LazyMotion features={domMax}>
         <ThemeProvider theme={muiTheme}>
           <FormProvider {...methods}>
             <CssBaseline />
-            <div
-              onClick={(e) => {
-                if (scrolled) {
-                  return;
-                }
-
-                let hash = "";
-                const target = e.target;
-                if (target instanceof HTMLAnchorElement) {
-                  hash = new URL(target.href).hash;
-                }
-                if (target instanceof HTMLButtonElement) {
-                  const link = target.closest("a");
-                  hash = new URL(link?.href ?? "").hash;
-                }
-
-                if (hash && !scrolled) {
-                  setScrolled(true);
-                  document.querySelector(hash)
-                    ? null
-                    : (hashRef.current = hash);
-                }
-              }}
-            >
-              <Header />
-            </div>
-            {scrolled && (
-              <Suspense>
-                <AboutSection />
-                <AthletesGallery />
-                <AboutTKDSection />
-                <AdvantageSection />
-                <CoachesSection />
-                <ServicesSection />
-                <HallsSection />
-                <Form methods={methods} />
-                <Footer />
-                <ToastContainer />
-              </Suspense>
-            )}
-            {!scrolled && <div className="min-h-screen" />}
+            <Header />
+            <Suspense>
+              <AboutSection />
+            </Suspense>
+            <Suspense>
+              <AthletesGallery />
+            </Suspense>
+            <Suspense>
+              <AboutTKDSection />
+            </Suspense>
+            <Suspense>
+              <AdvantageSection />
+            </Suspense>
+            <Suspense>
+              <CoachesSection />
+            </Suspense>
+            <Suspense>
+              <ServicesSection />
+            </Suspense>
+            <Suspense>
+              <HallsSection />
+            </Suspense>
+            <Suspense>
+              <Form methods={methods} />
+            </Suspense>
+            <Suspense>
+              <Footer />
+            </Suspense>
+            <ToastContainer />
           </FormProvider>
         </ThemeProvider>
       </LazyMotion>
