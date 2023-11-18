@@ -43,11 +43,11 @@ const AthletesGallery: React.FC = () => {
       className="sm:pl-[20px] tablet:pl-[30px] pl-[85px] lg:py-[60px] py-[75px] bg-background"
     >
       <div className="flex justify-between pb-[76px] xl:pb-0 pr-16 xl:pr-[30px] xl:flex-col ">
-        <div className="max-w-[597px] sm:text-[20px] text-[36px] sm:leading-[26px] leading-[46.8px] sm:font-semibold font-bold">
-          СПОРТСМЕНИ НАШОГО КЛУБУ - ЦЕ НАША ГОРДІСТЬ!
+        <div className="sm:uppercase max-w-[597px] sm:text-[20px] text-[36px] sm:leading-[26px] leading-[46.8px] sm:font-semibold font-bold">
+          Спортсмени нашого клубу - це наша гордість!
         </div>
-        <div className="xl:pt-[24px] tablet:pt-[36px]">
-          <div className="flex gap-[23px]">
+        <div className="xl:pt-[24px] tablet:pt-[36px] self-end">
+          <div className="flex gap-[23px] xs:mb-10">
             <p className="text-[14px] leading-none sm:hidden">Фільтр</p>
             <div>
               <div className="flex">
@@ -68,20 +68,20 @@ const AthletesGallery: React.FC = () => {
                 <FilterButton
                   name={"Літній табір"}
                   onClick={() => setGalleryKey("carpathian")}
-                  styleProp={"mb-3 mr-3"}
+                  styleProp={"mr-3"}
                   activeButton={galleryKey === "carpathian"}
                 />
                 <FilterButton
                   name={"Тренування"}
                   onClick={() => setGalleryKey("training")}
-                  styleProp={"mb-3 mr-3"}
+                  styleProp={"mr-3"}
                   activeButton={galleryKey === "training"}
                 />
               </div>
             </div>
           </div>
         </div>
-        <div className="flex items-end sm:pb-6 xl-tablet:pb-[18px] sm:pt-7 xl-tablet:pt-[80px] leading-none">
+        <div className="flex xs:hidden items-end sm:pb-6 xl-tablet:pb-[18px] sm:pt-7 xl-tablet:pt-[80px] leading-none">
           <button
             className="custom-swiper-button-prev"
             style={{
@@ -129,6 +129,7 @@ const AthletesGallery: React.FC = () => {
 
       {inView && (
         <Swiper
+          key={galleryKey}
           navigation={{
             nextEl: ".custom-swiper-button-next",
             prevEl: ".custom-swiper-button-prev",
@@ -137,6 +138,7 @@ const AthletesGallery: React.FC = () => {
             delay: 2500,
             disableOnInteraction: false,
           }}
+          loop
           modules={[Navigation, FreeMode, Autoplay]}
           slidesPerView="auto"
           spaceBetween={13}
@@ -154,7 +156,7 @@ const AthletesGallery: React.FC = () => {
           {galleryData.map(({ folder, photo }) => (
             <SwiperSlide className="!w-fit" key={photo}>
               <img
-                className="sm:max-h-[174px] tablet:max-h-[288px] max-h-[456px]"
+                className="sm:max-h-[304px] tablet:max-h-[288px] max-h-[456px]"
                 src={`/images/${folder}/${photo}.jpg`}
                 alt={photo}
               />

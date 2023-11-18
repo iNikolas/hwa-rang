@@ -13,20 +13,20 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <nav>
-          <ul className="flex 1xl:flex-col 1xl:justify-between pr-15">
-            <li className="pl-[35px] md:pl-0 xs:pt-[30px] 1xl:my-3 font-medium text-14">
+          <ul className="[&_li]:pl-[35px] flex 1xl:flex-col 1xl:justify-between pr-15">
+            <li className="md:pl-0 xs:pt-[30px] 1xl:my-3 font-medium text-14">
               <a href="#about">/ ПРО КЛУБ</a>
             </li>
-            <li className="pl-[35px] md:pl-0 1xl:my-3  font-medium text-14">
+            <li className="md:pl-0 1xl:my-3  font-medium text-14">
               <a href="#advantages">/ НАШІ ПЕРЕВАГИ</a>
             </li>
-            <li className="pl-[35px] md:pl-0 1xl:my-3 font-medium text-14">
+            <li className="md:pl-0 1xl:my-3 font-medium text-14">
               <a href="#trainers">/ ТРЕНЕРА</a>
             </li>
-            <li className="pl-[35px] md:pl-0 1xl:my-3 font-medium text-14">
+            <li className="md:pl-0 1xl:my-3 font-medium text-14">
               <a href="#trainers">/ ЗАЛИ</a>
             </li>
-            <li className="pl-[35px] md:pl-0 1xl:my-3 font-medium text-14">
+            <li className="md:pl-0 1xl:my-3 font-medium text-14">
               <a href="#trainers">/ ПОСЛУГИ</a>
             </li>
           </ul>

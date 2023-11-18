@@ -7,7 +7,7 @@ const title2 = " TAE";
 
 export const Header: React.FC = () => {
   return (
-    <header className="relative flex md:flex-col h-screen">
+    <header className="relative flex md:flex-col h-screen min-h-[780px] tablet:min-h-[1049px] sm:min-h-[690px] overflow-hidden">
       <div className="relative md:flex items-center justify-between hidden bg-white px-[20px] h-[86px]" />
       <div className="absolute z-30 left-[15px] top-[30px] tablet:top-[20px] font-fontMonument bg-gradient-to-r from-[#BA2E30] via-[#A277A9] to-[#F85253] text-transparent bg-clip-text font-extrabold text-[32px] sm:text-[20px] text-center">
         HWA-RANG

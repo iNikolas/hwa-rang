@@ -1,3 +1,4 @@
+import React from "react";
 import { Select } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
 
@@ -8,7 +9,18 @@ import { MenuItem } from "./MenuItem";
 import { FormControl } from "./FormControl";
 
 export function HallInput() {
-  const { control } = useFormContext();
+  const { control, watch, setValue } = useFormContext();
+
+  const service = watch("service");
+
+  const disabled =
+    service?.toLowerCase().replace(/[\s-]/g, "") === "онлайнтренування";
+
+  React.useEffect(() => {
+    if (disabled) {
+      setValue("hall", "none");
+    }
+  }, [disabled, setValue]);
 
   return (
     <Controller
@@ -22,6 +34,7 @@ export function HallInput() {
             value={value}
             onChange={onChange}
             onBlur={onBlur}
+            disabled={disabled}
           >
             <MenuItem sx={{ display: "none" }} value="none">
               Оберіть зал

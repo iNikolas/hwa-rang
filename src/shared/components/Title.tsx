@@ -2,11 +2,11 @@ import { cn } from "shared/utils";
 
 import "./Title.module.scss";
 
-export const Title: React.FC<{ title: string; style?: string }> = ({
-  title,
-  style,
-}) => {
-  const slash = ["/", "/", "/", "/", "/"].join("");
+export const Title: React.FC<{
+  title: string;
+  style?: string;
+  pure?: boolean;
+}> = ({ title, style, pure = false }) => {
   return (
     <h3
       className={cn(
@@ -14,7 +14,7 @@ export const Title: React.FC<{ title: string; style?: string }> = ({
         style
       )}
     >
-      {slash} {title}
+      {pure ? title : ["/", "/", "/", "/", "/ "].join("").concat(title)}
     </h3>
   );
 };

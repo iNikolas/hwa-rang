@@ -49,7 +49,7 @@ export const ContactCard: React.FC<{
   desc,
 }) => {
   return (
-    <div className="flex flex-col justify-center p-[3%] max-w-[691px] w-full bg-white">
+    <div className="flex flex-col justify-center p-[3%] max-w-[690px] w-full bg-white">
       <div className="border-b border-solid border-[#DCE7E9] mb-6">
         <p className="text-24 leading-none font-semibold pb-7">
           {splitName({ name: place ?? "" })
