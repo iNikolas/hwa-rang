@@ -4,6 +4,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, FreeMode, Autoplay } from "swiper/modules";
 
+import { cn } from "utils/index";
+
 import images from "data/galleryImages.json";
 
 import { SignUpButtonOutline } from "../shared/components/btns/SignUpButtonOutline";
@@ -16,6 +18,8 @@ enum GalleryFilterCategory {
   Carpathian = "carpathian",
   Training = "training",
 }
+
+const imgHeight = "sm:h-[304px] tablet:h-[288px] h-[456px]";
 
 const AthletesGallery: React.FC = () => {
   const [galleryData, setGalleryData] = React.useState(images.examImages);
@@ -127,43 +131,45 @@ const AthletesGallery: React.FC = () => {
         </div>
       </div>
 
-      {inView && (
-        <Swiper
-          key={galleryKey}
-          navigation={{
-            nextEl: ".custom-swiper-button-next",
-            prevEl: ".custom-swiper-button-prev",
-          }}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          loop
-          modules={[Navigation, FreeMode, Autoplay]}
-          slidesPerView="auto"
-          spaceBetween={13}
-          breakpoints={{
-            639: {
-              spaceBetween: 21,
-            },
-            1023: {
-              spaceBetween: 24,
-            },
-          }}
-          freeMode={true}
-          className="mySwiper"
-        >
-          {galleryData.map(({ folder, photo }) => (
-            <SwiperSlide className="!w-fit" key={photo}>
-              <img
-                className="sm:max-h-[304px] tablet:max-h-[288px] max-h-[456px]"
-                src={`/images/${folder}/${photo}.jpg`}
-                alt={photo}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
+      <div className={cn(imgHeight)}>
+        {inView && (
+          <Swiper
+            key={galleryKey}
+            navigation={{
+              nextEl: ".custom-swiper-button-next",
+              prevEl: ".custom-swiper-button-prev",
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            loop
+            modules={[Navigation, FreeMode, Autoplay]}
+            slidesPerView="auto"
+            spaceBetween={13}
+            breakpoints={{
+              639: {
+                spaceBetween: 21,
+              },
+              1023: {
+                spaceBetween: 24,
+              },
+            }}
+            freeMode={true}
+            className="mySwiper"
+          >
+            {galleryData.map(({ folder, photo }) => (
+              <SwiperSlide className="!w-fit" key={photo}>
+                <img
+                  className={cn(imgHeight)}
+                  src={`/images/${folder}/${photo}.jpg`}
+                  alt={photo}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+      </div>
       <div className="sm:block flex justify-center pt-10 sm:pr-5">
         <a href="#form">
           <SignUpButtonOutline className="sm:w-full sm:!max-w-none" />
