@@ -27,7 +27,7 @@ export function HallInput() {
       name="hall"
       control={control}
       render={({ field: { onChange, onBlur, value } }) => (
-        <FormControl>
+        <FormControl selected={value !== "none"}>
           <Label htmlFor="halls-select">Зал</Label>
           <Select
             id="halls-select"

@@ -22,7 +22,9 @@ export function NameInput() {
           <TextField
             fullWidth
             id="name"
-            onChange={onChange}
+            onChange={(event) =>
+              onChange(event.target.value.replace(/\d/g, ""))
+            }
             value={value}
             placeholder="Введіть ваше ім’я"
             variant="standard"

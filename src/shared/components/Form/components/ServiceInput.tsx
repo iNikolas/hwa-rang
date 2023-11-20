@@ -15,7 +15,7 @@ export function ServiceInput() {
       name="service"
       control={control}
       render={({ field: { onChange, value } }) => (
-        <FormControl>
+        <FormControl selected={value !== "none"}>
           <Label htmlFor="services-select">Послуги</Label>
           <Select id="services-select" value={value} onChange={onChange}>
             <MenuItem sx={{ display: "none" }} value="none">

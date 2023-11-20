@@ -4,15 +4,24 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
+import { cn } from "utils/index";
 import { theme } from "theme";
 
-export const FormControl = (props: FormControlProps) => {
+export const FormControl = ({
+  className,
+  selected = false,
+  ...props
+}: { selected?: boolean } & FormControlProps) => {
   const gtSmLtLg = useMediaQuery(
     `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`
   );
   return (
     <MuiFormControl
-      className="[&_.MuiSelect-select]:text-gray-400"
+      className={cn(
+        "[&_.MuiSelect-select]:text-gray-400",
+        selected && "[&_.MuiSelect-select]:text-deep-black",
+        className
+      )}
       variant="standard"
       size="small"
       fullWidth
