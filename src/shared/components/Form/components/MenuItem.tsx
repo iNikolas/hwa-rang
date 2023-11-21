@@ -6,7 +6,7 @@ export const MenuItem = ({ sx, ...props }: MenuItemProps) => {
   return (
     <MuiMenuItem
       sx={{
-        color: theme.colors.gray[400],
+        color: theme.colors["deep-black"],
         "&.Mui-selected": {
           backgroundColor: theme.colors["dark-blue"],
           color: theme.colors.white,

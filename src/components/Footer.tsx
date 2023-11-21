@@ -13,33 +13,33 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <nav>
-          <ul className="[&_li]:pl-[35px] flex 1xl:flex-col 1xl:justify-between pr-15">
-            <li className="md:pl-0 xs:pt-[30px] 1xl:my-3 font-medium text-14">
+          <ul className="[&_li]:pl-[35px] [&_li]:md:pl-0 flex 1xl:flex-col 1xl:justify-between pr-15">
+            <li className="xs:pt-[30px] 1xl:my-3 font-medium text-14">
               <a href="#about">/ ПРО КЛУБ</a>
             </li>
-            <li className="md:pl-0 1xl:my-3  font-medium text-14">
+            <li className="1xl:my-3  font-medium text-14">
               <a href="#advantages">/ НАШІ ПЕРЕВАГИ</a>
             </li>
-            <li className="md:pl-0 1xl:my-3 font-medium text-14">
+            <li className="1xl:my-3 font-medium text-14">
               <a href="#trainers">/ ТРЕНЕРА</a>
             </li>
-            <li className="md:pl-0 1xl:my-3 font-medium text-14">
+            <li className="1xl:my-3 font-medium text-14">
               <a href="#trainers">/ ЗАЛИ</a>
             </li>
-            <li className="md:pl-0 1xl:my-3 font-medium text-14">
+            <li className="1xl:my-3 font-medium text-14">
               <a href="#trainers">/ ПОСЛУГИ</a>
             </li>
           </ul>
         </nav>
 
-        <div>
+        <div className="xs:mt-[23px]">
           <p className="font-medium text-14 block xs:hidden">/ КОНТАКТИ</p>
 
           <a
-            className="font-normal  text-18 text-lg text-gray-600"
+            className="font-normal text-18 text-lg text-gray-600"
             href="mailto:hwa-rang@ukr.net"
           >
-            <span className="font-normal xs:block text-14 text-gray-600 pr-2">
+            <span className="font-normal block text-14 text-gray-600 pr-2 xs:hidden">
               Email:
             </span>
             hwa-rang@ukr.net

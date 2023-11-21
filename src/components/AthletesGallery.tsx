@@ -41,6 +41,20 @@ const AthletesGallery: React.FC = () => {
     }
   }, [galleryKey]);
 
+  const gallery = React.useMemo(
+    () =>
+      galleryData.map(({ folder, photo }) => (
+        <SwiperSlide className="!w-fit" key={photo}>
+          <img
+            className={cn(imgHeight)}
+            src={`/images/${folder}/${photo}.jpg`}
+            alt={photo}
+          />
+        </SwiperSlide>
+      )),
+    [galleryData]
+  );
+
   return (
     <section
       ref={sectionRef}
@@ -158,15 +172,7 @@ const AthletesGallery: React.FC = () => {
             freeMode={true}
             className="mySwiper"
           >
-            {galleryData.map(({ folder, photo }) => (
-              <SwiperSlide className="!w-fit" key={photo}>
-                <img
-                  className={cn(imgHeight)}
-                  src={`/images/${folder}/${photo}.jpg`}
-                  alt={photo}
-                />
-              </SwiperSlide>
-            ))}
+            {gallery}
           </Swiper>
         )}
       </div>
