@@ -46,6 +46,7 @@ export default {
         "active-border": "rgba(6,19,44,1)",
         disabled: "#ADADAD",
         "tint-white": "#F7F1F1",
+        "background-white": "#F5F5F5",
         background: "#F9FBFC",
       },
       fontSize: {

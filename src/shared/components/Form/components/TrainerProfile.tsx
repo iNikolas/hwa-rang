@@ -14,12 +14,15 @@ export function TrainerProfile({ trainer }: { trainer: string }) {
   return (
     <div className="p-[55px] text-white">
       <div className="flex gap-6 flex-wrap">
-        <div className="min-h-[192px] flex items-center">
+        <div className="min-h-[192px] flex items-end bg-background-white">
           <picture>
-            <source type="image/avif" srcSet={trainerData?.photo + ".avif"} />
+            <source
+              type="image/avif"
+              srcSet={trainerData?.photo + "-white-bg" + ".avif"}
+            />
             <img
               className="w-[173px]"
-              src={trainerData?.photo + ".jpg"}
+              src={trainerData?.photo + "-white-bg" + ".jpg"}
               alt="trainer photo"
             />
           </picture>
