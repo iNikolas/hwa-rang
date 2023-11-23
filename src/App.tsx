@@ -29,6 +29,7 @@ const ServicesSection = React.lazy(
   () => import("./components/ServicesSection")
 );
 const Form = React.lazy(() => import("./shared/components/Form"));
+const GoToTop = React.lazy(() => import("./shared/components/btns/GoToTop"));
 
 function App() {
   const methods = useForm<FormSchema>({
@@ -79,6 +80,9 @@ function App() {
             </Suspense>
             <Suspense>
               <Footer />
+            </Suspense>
+            <Suspense>
+              <GoToTop />
             </Suspense>
             <ToastContainer />
           </FormProvider>
