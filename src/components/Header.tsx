@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
       </div>
       <div className="absolute md:block hidden sm:bottom-[67px] tablet:bottom-[10%] sm:left-[20px] left-[30px] xs:mt-[50px] sm:max-w-[335px] sm:w-full">
         <h1 className="tablet:tracking-[0.04rem] tablet:leading-[75.4px] tablet:uppercase mb-[40px] text-white text-58 sm:text-48 leading-none font-bold uppercase md:normal-case sm:mb-[30px]">
-          Тхеквандо <br /> для <span className="sm:inline hidden">дітей</span>
+          Тхеквондо <br /> для <span className="sm:inline hidden">дітей</span>
           <span className="sm:hidden">дорослих</span>
           <br />
           та <span className="sm:inline hidden">дорослих</span>
@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
         </nav>
         <div className="absolute bottom-[14px] left-[30px]">
           <h1 className="mb-[30px] text-black text-58 1xl:text-42 font-extrabold uppercase md:normal-case tracking-normal leading-[69px]">
-            Тхеквандо <br /> для дорослих <br /> та дітей
+            Тхеквондо <br /> для дорослих <br /> та дітей
           </h1>
           <p className="font-bold text-24 leading-[31.2px] mb-[50px]">
             Тренування для всіх, незалежно{" "}
