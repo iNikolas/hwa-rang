@@ -1,19 +1,19 @@
 $title-color: linear-gradient(
-    90deg,
-    #07132c -2.04%,
-    #592860 46.85%,
-    #f75253 100%
+  90deg,
+  #07132c -2.04%,
+  #592860 46.85%,
+  #f75253 100%
 );
 
 h3 {
-    background: $title-color;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-family: "Montserrat";
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 38px;
-    letter-spacing: 0.12em;
-    text-align: left;
+  background: $title-color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: "Montserrat";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0.12em;
+  text-align: left;
 }

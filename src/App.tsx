@@ -11,22 +11,23 @@ import { FormSchema } from "shared/components/Form/types";
 import { Header } from "./components/Header";
 
 import "./App.module.scss";
+import { FAQSection } from "components/FAQSection";
 
 const AboutSection = React.lazy(() => import("./components/AboutSection"));
 const AboutTKDSection = React.lazy(
-  () => import("./components/AboutTKDSection")
+  () => import("./components/AboutTKDSection"),
 );
 const AdvantageSection = React.lazy(
-  () => import("./components/AdvantageSection")
+  () => import("./components/AdvantageSection"),
 );
 const AthletesGallery = React.lazy(
-  () => import("./components/AthletesGallery")
+  () => import("./components/AthletesGallery"),
 );
 const CoachesSection = React.lazy(() => import("./components/CoachesSection"));
 const Footer = React.lazy(() => import("./components/Footer"));
 const HallsSection = React.lazy(() => import("./components/HallsSection"));
 const ServicesSection = React.lazy(
-  () => import("./components/ServicesSection")
+  () => import("./components/ServicesSection"),
 );
 const Form = React.lazy(() => import("./shared/components/Form"));
 const GoToTop = React.lazy(() => import("./shared/components/btns/GoToTop"));
@@ -74,6 +75,9 @@ function App() {
             </Suspense>
             <Suspense>
               <HallsSection />
+            </Suspense>
+            <Suspense>
+              <FAQSection />
             </Suspense>
             <Suspense>
               <Form methods={methods} />

@@ -15,7 +15,7 @@ export function HowToConnect() {
   } = useFormContext();
 
   const gtSmLtLg = useMediaQuery(
-    `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`
+    `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`,
   );
 
   const error = errors.howToConnect;
@@ -48,7 +48,7 @@ export function HowToConnect() {
                       onChange(
                         mobile
                           ? howToConnect.filter((h) => h !== connections.mobile)
-                          : [...howToConnect, connections.mobile]
+                          : [...howToConnect, connections.mobile],
                       )
                     }
                   />
@@ -65,7 +65,7 @@ export function HowToConnect() {
                       onChange(
                         viber
                           ? howToConnect.filter((h) => h !== connections.viber)
-                          : [...howToConnect, connections.viber]
+                          : [...howToConnect, connections.viber],
                       )
                     }
                   />
@@ -82,9 +82,9 @@ export function HowToConnect() {
                       onChange(
                         telegram
                           ? howToConnect.filter(
-                              (h) => h !== connections.telegram
+                              (h) => h !== connections.telegram,
                             )
-                          : [...howToConnect, connections.telegram]
+                          : [...howToConnect, connections.telegram],
                       )
                     }
                   />

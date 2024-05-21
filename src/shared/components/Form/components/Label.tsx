@@ -9,7 +9,7 @@ export const Label = ({
       {...props}
       className={cn(
         "block text-xl leading-none font-medium mb-[9px]",
-        className
+        className,
       )}
     />
   );

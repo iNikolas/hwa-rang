@@ -13,14 +13,14 @@ export const FormControl = ({
   ...props
 }: { selected?: boolean } & FormControlProps) => {
   const gtSmLtLg = useMediaQuery(
-    `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`
+    `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`,
   );
   return (
     <MuiFormControl
       className={cn(
         "[&_.MuiSelect-select]:text-gray-400",
         selected && "[&_.MuiSelect-select]:text-deep-black",
-        className
+        className,
       )}
       variant="standard"
       size="small"

@@ -34,7 +34,7 @@ export const AccordionCardHall: React.FC<{
             {splitName({ name: place ?? "" })
               .map(
                 ({ normalCasePart, uppercasePart }) =>
-                  normalCasePart + uppercasePart
+                  normalCasePart + uppercasePart,
               )
               .join(" / ")}
           </p>

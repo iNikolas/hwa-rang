@@ -25,7 +25,7 @@ const Description = ({
     <span
       className={cn(
         "text-white text-18 leading-[27px] mb-5 font-normal font-pp-neue-montreal",
-        className
+        className,
       )}
       {...props}
     />
@@ -41,7 +41,7 @@ export function RelatedHalls({ trainer }: { trainer: string }) {
   const { setValue } = useFormContext();
 
   const hall = relatedHalls.find(
-    (h) => h.name.toLowerCase() === selectedHall.toLowerCase()
+    (h) => h.name.toLowerCase() === selectedHall.toLowerCase(),
   );
 
   return (
@@ -59,7 +59,7 @@ export function RelatedHalls({ trainer }: { trainer: string }) {
               <span
                 className={cn(
                   "text-[24px] relative z-10 uppercase font-bold px-[21px] py-1.5",
-                  activeTab && "text-dark-blue"
+                  activeTab && "text-dark-blue",
                 )}
               >
                 Зал {index + 1}

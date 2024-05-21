@@ -23,7 +23,7 @@ const Description: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
       {...props}
       className={cn(
         "text-18 leading-[23.4px] font-pp-neue-montreal tracking-wide",
-        className
+        className,
       )}
     />
   );
@@ -55,7 +55,7 @@ export const ContactCard: React.FC<{
           {splitName({ name: place ?? "" })
             .map(
               ({ normalCasePart, uppercasePart }) =>
-                normalCasePart + uppercasePart
+                normalCasePart + uppercasePart,
             )
             .join(" / ")}
         </p>

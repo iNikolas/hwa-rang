@@ -34,8 +34,8 @@ function GoToTop({
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={cn(
-              "z-10 w-[48px] h-[48px] block fixed right-[19px] lg:right-2 top-1/2 lg:bottom-2 lg:top-auto lg:translate-y-0 -translate-y-1/2 shadow-custom rounded-full bg-white border-border-semi-transparent border hover:border-0 fill-alternative-deep-black transition hover:fill-white hover:bg-gradient hover:animate-gradient-shift",
-              className
+              "z-10 w-[48px] h-[48px] block fixed right-[19px] lg:right-2 top-[95%] lg:bottom-2 lg:top-auto lg:translate-y-0 -translate-y-1/2 shadow-custom rounded-full bg-white border-border-semi-transparent border hover:border-0 fill-alternative-deep-black transition hover:fill-white hover:bg-gradient hover:animate-gradient-shift",
+              className,
             )}
             style={{ backgroundSize: "200% 200%" }}
             {...props}

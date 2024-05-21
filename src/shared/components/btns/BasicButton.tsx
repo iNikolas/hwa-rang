@@ -19,7 +19,7 @@ export const BasicButton: React.FC<
         commonStyles,
         "text-disabled border-disabled",
         loadingStyle,
-        className
+        className,
       )}
       {...props}
     />
@@ -30,7 +30,7 @@ export const BasicButton: React.FC<
         commonStyles,
         "border-border hover:bg-gradient hover:border-active-border hover:text-white hover:animate-gradient-shift",
         loadingStyle,
-        className
+        className,
       )}
       style={{ backgroundSize: "200% 200%" }}
     />
