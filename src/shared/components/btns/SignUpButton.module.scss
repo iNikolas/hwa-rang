@@ -1,28 +1,28 @@
 $btn-color: linear-gradient(90deg, #09142e 2.82%, #58275f 52%, #f85253 104.36%);
 
 .button {
-    width: 296px;
-    height: 48px;
-    gap: 8px;
-    background-color: #fff;
-    background: $btn-color;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.4s ease;
+  width: 296px;
+  height: 48px;
+  gap: 8px;
+  background-color: #fff;
+  background: $btn-color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  &::before {
+    content: "/ ";
+  }
+  &:hover {
+    animation: all 2s infinite;
     &::before {
-        content: "/ ";
+      content: "\\ ";
     }
-    &:hover {
-        animation: all 2s infinite;
-        &::before {
-            content: "\\ ";
-        }
-    }
+  }
 }

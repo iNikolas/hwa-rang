@@ -16,7 +16,7 @@ const Link: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
       {...props}
       className={cn(
         "text-14 text-alternative-black font-[500] leading-none mb-[38px]",
-        className
+        className,
       )}
     />
   );

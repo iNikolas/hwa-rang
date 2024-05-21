@@ -14,7 +14,7 @@ export function LocationInfo() {
     const selectedHallinfo = hallsData.find(
       (h) =>
         h.name.toLowerCase().replace(" ", "") ===
-        selectedHall.toLowerCase().replace(" ", "")
+        selectedHall.toLowerCase().replace(" ", ""),
     );
 
     return selectedHallinfo ? selectedHallinfo.trainer : null;

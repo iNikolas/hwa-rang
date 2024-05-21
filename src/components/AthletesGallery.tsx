@@ -52,7 +52,7 @@ const AthletesGallery: React.FC = () => {
           />
         </SwiperSlide>
       )),
-    [galleryData]
+    [galleryData],
   );
 
   return (

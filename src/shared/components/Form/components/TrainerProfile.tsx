@@ -40,7 +40,7 @@ export function TrainerProfile({ trainer }: { trainer: string }) {
                     {uppercasePart}
                   </p>
                 );
-              }
+              },
             )}
           </div>
           <div>

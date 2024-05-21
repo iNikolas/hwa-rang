@@ -9,7 +9,7 @@ export function NameInput() {
   const { control } = useFormContext();
 
   const gtSmLtLg = useMediaQuery(
-    `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`
+    `(max-width: ${theme.screens.lg.max}) and (min-width: ${theme.screens.sm.max})`,
   );
 
   return (

@@ -1,18 +1,18 @@
 $title-color: linear-gradient(
-    90deg,
-    #09142e 2.82%,
-    #58275f 52%,
-    #f85253 104.36%
+  90deg,
+  #09142e 2.82%,
+  #58275f 52%,
+  #f85253 104.36%
 );
 
 .sectionTitle {
-    background: $title-color;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 32px;
-    letter-spacing: 0em;
-    text-align: center;
+  background: $title-color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
 }

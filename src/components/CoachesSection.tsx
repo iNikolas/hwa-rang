@@ -15,7 +15,7 @@ const Description: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
       {...props}
       className={cn(
         "uppercase text-24 lg:text-18 leading-none font-bold pb-4",
-        className
+        className,
       )}
     />
   );
@@ -55,19 +55,19 @@ const CoachesSection: React.FC = () => {
             key={coach.name}
             className={cn(
               "w-full flex-row lg:flex-col lg:items-center justify-between tablet:px-[30px]",
-              alt && "lg:flex-col-reverse pt-[78px] tablet:pt-[60px]"
+              alt && "lg:flex-col-reverse pt-[78px] tablet:pt-[60px]",
             )}
           >
             {!alt && <Image />}
             <CardBody
               className={cn(
                 "w-full pl-[10%] sm:px-4 lg:pt-[6%] tablet:pt-[28px] pt-[43px] tablet:px-0 pr-5",
-                alt && "pl-[85px]"
+                alt && "pl-[85px]",
               )}
             >
               <p
                 className={cn(
-                  "uppercase lg:text-24 lg:leading-[31.2px] leading-[48px] text-32 font-bold tablet:pb-[30px] pb-[40px] sm:pt-0 sm:pb-0"
+                  "uppercase lg:text-24 lg:leading-[31.2px] leading-[48px] text-32 font-bold tablet:pb-[30px] pb-[40px] sm:pt-0 sm:pb-0",
                 )}
               >
                 {coach.name}
